@@ -1,3 +1,9 @@
+/* SYSC4001 Lab 2
+ * By: Lorien Aquarius 101189924
+ * to build: gcc fork.c -o fork
+ * to run: ./fork
+ */
+
 #include <sys/types.h>
 #include <unistd.h>
 #include <stdio.h>
@@ -5,6 +11,8 @@
 #include <time.h>
 #include <sys/time.h>
 #define MICRO_SEC_IN_SEC 1000000
+
+
 int main(int argc, char *argv[]){
 
 	struct timeval start, end;
