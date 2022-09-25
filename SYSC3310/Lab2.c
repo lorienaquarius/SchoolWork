@@ -2,6 +2,9 @@
 #include<string.h>
 #include<stdlib.h>
 
+//By: Lorien Aquarius
+
+
 /*
 	Each element in a list is a person, with an attribute "name"
 	And an emergency contact, who can be anyone else on the list
@@ -111,7 +114,7 @@ int findIndex(struct list_node *head, struct list_node *value){
 
 	int index = 0;
 	while(head != NULL){
-		if(!(strcmp(head->name, value->name))){
+		if(head=value){
 			
 			return index;
 		}
