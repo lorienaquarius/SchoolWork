@@ -3,7 +3,8 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
-
+//SYSC4001 Lab 3
+//By:Lorien Aquarius
 static int alarm_fired = 0;
 
 void ding(int sig){
