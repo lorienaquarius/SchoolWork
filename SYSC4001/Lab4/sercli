@@ -1,4 +1,4 @@
-xterm -T server &
-xterm -T client1 &
-xterm -T client2 &
-xterm -T client3 &
+alacritty &
+alacritty &
+alacritty &
+alacritty &
