@@ -23,6 +23,7 @@ int main(){
             int initialized_sensors = 0;
             sensor* sensors = malloc(sizeof(sensor) * max_sensors);
             mkfifo(CONTROLLER_FIFO, 0777);
+            
             int controller_fifo_fd = open(CONTROLLER_FIFO, O_RDONLY);
 
             if(controller_fifo_fd == -1){
@@ -31,8 +32,11 @@ int main(){
 
             int first;
             do{
+
+
                 read_result = read(controller_fifo_fd, &first, sizeof(int));
 
+                
                 if(read_result > 0){
                     switch(first){ //First time device has sent information, register relevant info
                         case 1:
@@ -63,14 +67,15 @@ int main(){
                                 printf("Received sensor data from device %s, with pid %d. Value is %d / %d.\n", sensors[index].name, sensors[index].sensor_pid, sensors[index].value, sensors[index].threshold);
                             }
                             break;
-                            check_threshold(sensors[index]);
+                            //check_threshold(sensors[index]);
 
                     }
                 }
 
-            } while(read_result > 0);
+            } while(read_result >= 0);
 
         default:
+            break;
 
     }
 

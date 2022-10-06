@@ -48,7 +48,7 @@ int main(int argc, char* argv[]){
         result = write(controller_fifo_fd, &device, sizeof(device));
     }
     first = 0;
-    sleep(1);
+    sleep(3);
     
     //simulated repeat writes
     for(int i = 0; i < 5; i++){
@@ -61,7 +61,7 @@ int main(int argc, char* argv[]){
         result = write(controller_fifo_fd, &device, sizeof(device));
         sleep(1);
     }
-    printf("device pid was %d\n", device.sensor_pid);
+    close(controller_fifo_fd);
     exit(0);
 
 }
