@@ -3,7 +3,9 @@
 
 
 void check_threshold(sensor s){
-
+    if(s.value > s.threshold){
+        kill(s.sensor_pid, SIGPOLL);
+    }
 }
 
 int main(){
@@ -35,7 +37,7 @@ int main(){
 
 
                 read_result = read(controller_fifo_fd, &first, sizeof(int));
-
+                printf("read result has value %d\n", read_result);
                 
                 if(read_result > 0){
                     switch(first){ //First time device has sent information, register relevant info
@@ -54,20 +56,21 @@ int main(){
                             pid_t device_pid;
                             read_result = read(controller_fifo_fd, &device_pid, sizeof(pid_t)); //Read PID info
                             int index;
-                            for(int i = 0; i <= initialized_sensors; i++){
+                            for(int i = 0; i < initialized_sensors; i++){
                                 if(sensors[i].sensor_pid == device_pid){
                                     index = i;
                                     break;
                                 }
                             }
-
+                            
+                            check_threshold(sensors[index]);
                             if(read_result > 0){
                                 read_result = read(controller_fifo_fd, &sensors[index], sizeof(sensor)); //get sensor value by re-reading it into array
                                 printf("Device threshold is at %d\n", sensors[index].threshold);
                                 printf("Received sensor data from device %s, with pid %d. Value is %d / %d.\n", sensors[index].name, sensors[index].sensor_pid, sensors[index].value, sensors[index].threshold);
                             }
                             break;
-                            //check_threshold(sensors[index]);
+                            
 
                     }
                 }

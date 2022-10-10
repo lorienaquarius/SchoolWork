@@ -2,11 +2,19 @@
 
 #include "files.h"
 
+int controller_fifo_fd;
+
+void stop(){
+    printf("Sensor has reached threshold, stopping device.\n");
+    exit(0);
+}
+
 int main(int argc, char* argv[]){
 
-    int controller_fifo_fd;
+    
     sensor device;
     device.sensor_pid = getpid();
+
     //Assign device actuator status and check if it's valid
     device.is_actuator = atoi(argv[1]);
     if(device.is_actuator < 0 || device.is_actuator > 1){
@@ -16,27 +24,26 @@ int main(int argc, char* argv[]){
     
     //Assign name and threshold value
     strcpy(device.name, argv[2]);
-
-    if(device.is_actuator){
-        device.value = -1;
-        device.threshold = -1; //assign error threshold for actuator
-    } else {
-        device.value = 1;
-        device.threshold = atoi(argv[3]);
-    }
     
-    //Confirm device creation
-    if(device.is_actuator){
-        printf("Created actuator device named %s\n", device.name);
-    } else {
-        printf("Created sensor device named %s with threshold %d.\n", device.name, device.threshold);
-    }
+    switch(device.is_actuator){
+        case 0:
+            device.value = 1;
+            device.threshold = atoi(argv[3]);
+            printf("Created sensor device named %s with threshold %d.\n", device.name, device.threshold);
+            
+            //Open FIFO
+            controller_fifo_fd = open(CONTROLLER_FIFO, O_WRONLY);
+            if(controller_fifo_fd == -1){
+                perror("Could not open controller FIFO\n");
+                exit(EXIT_FAILURE);
+            }
+            break;
+        case 1:
+            device.value = -1; //assign error value for actuator
+            device.threshold = -1; //assign error threshold for actuator
 
-    //Open FIFO
-    controller_fifo_fd = open(CONTROLLER_FIFO, O_WRONLY);
-    if(controller_fifo_fd == -1){
-        perror("Could not open controller FIFO\n");
-        exit(EXIT_FAILURE);
+            printf("Created actuator device named %s\n", device.name);
+            break;
     }
 
     //Initial write a 1 to let controller know this is a new device
@@ -50,18 +57,29 @@ int main(int argc, char* argv[]){
     first = 0;
     sleep(3);
     
-    //simulated repeat writes
-    for(int i = 0; i < 5; i++){
-        device.value++;
-        //write a 0 so controller knows this is not a first time write
-        result = write(controller_fifo_fd, &first, sizeof(int));
-        //write the PID so the controller can find the right sensor index in its array
-        result = write(controller_fifo_fd, &device.sensor_pid, sizeof(pid_t));
-        //write the rest of the data
-        result = write(controller_fifo_fd, &device, sizeof(device));
-        sleep(1);
+    switch(device.is_actuator){
+        case 0:
+            struct sigaction die;
+            die.sa_handler = stop;
+            die.sa_flags = 0;
+            sigemptyset(&die.sa_mask);
+
+            sigaction(SIGPOLL, &die, 0);
+            while(1){
+                //increment device value
+                device.value++;
+                //write a 0 so controller knows this is not a first time write
+                result = write(controller_fifo_fd, &first, sizeof(int));
+                //write the PID so the controller can find the right sensor index in its array
+                result = write(controller_fifo_fd, &device.sensor_pid, sizeof(pid_t));
+                //write the rest of the data
+                result = write(controller_fifo_fd, &device, sizeof(device));
+                sleep(1);
+            }
+            break;
     }
-    close(controller_fifo_fd);
-    exit(0);
+    //simulated repeat writes
+    printf("Signal was not received, exitting abnormally\n");
+    exit(1);
 
 }
