@@ -65,7 +65,7 @@ int main(int argc, char* argv[]){
         if(result < 0){
             printf("FIFO could not be written to\n");
         }
-        sleep(2);
+        sleep(1);
     }
 
 }
