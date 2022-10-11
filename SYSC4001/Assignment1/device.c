@@ -3,10 +3,11 @@
 #include "files.h"
 
 int controller_fifo_fd;
-
+sensor device;
 void stop(){
     printf("Sensor has reached threshold, stopping device.\n");
-    exit(0);
+    close(controller_fifo_fd);
+    unlink(CONTROLLER_FIFO);
 }
 
 void acknowledge(){
@@ -16,7 +17,7 @@ void acknowledge(){
 int main(int argc, char* argv[]){
 
     
-    sensor device;
+    
     device.sensor_pid = getpid();
     device.activated = 0;
     //Assign device actuator status and check if it's valid
@@ -43,6 +44,8 @@ int main(int argc, char* argv[]){
         sleep(1);
         result = write(controller_fifo_fd, &device, sizeof(sensor));
     }
+
+    //Setup for acknowledge signal
     struct sigaction ack;
     ack.sa_handler = acknowledge;
     ack.sa_flags = 0;
@@ -50,7 +53,10 @@ int main(int argc, char* argv[]){
     sigaction(SIGCONT, &ack, 0);
 
     pause();
+
     printf("Sensor Initiated\n");
+
+    //Setup for threshold reached signal
     device.activated = 1;
     struct sigaction die;
     die.sa_handler = stop;

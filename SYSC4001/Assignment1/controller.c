@@ -7,8 +7,13 @@ void check_threshold(sensor s){
 
     //Check threshold value
     if(s.value > s.threshold){
-        kill(s.sensor_pid, SIGPOLL); //send signal to sensor that it has maxed out
+        kill(s.sensor_pid, SIGPOLL); //send signal to sensor that it has maxed out and to stop
         kill(getppid(), SIGUSR1); //send signal to parent
+        if(actuator.name[0] != 0){
+            kill(actuator.sensor_pid, SIGALRM); //Send signal to actuator that threshold has been reached for a device
+        } else {
+            printf("Sensor has reached threshold, however no actuator has been registered\n");
+        }
     }
 }
 
@@ -72,36 +77,36 @@ int main(){
                 } while(read_result > 0);
                 break;
             //Parent Process            
-            default:
+        default:
 
-                int wr_res;
+            int wr_res;
 
-                //Open Cloud FIFO to write to
-                int cloud_fifo_fd = open(CLOUD_FIFO, O_WRONLY);
-                if(cloud_fifo_fd == -1){
-                    printf("Could not open Cloud FIFO\n");
-                    exit(1);
+            //Open Cloud FIFO to write to
+            int cloud_fifo_fd = open(CLOUD_FIFO, O_WRONLY);
+            if(cloud_fifo_fd == -1){
+                printf("Could not open Cloud FIFO\n");
+                exit(1);
+            }
+
+            //Check for signal
+            struct sigaction trigger;
+            trigger.sa_handler = alert_cloud;
+            trigger.sa_flags = 0;
+            sigemptyset(&trigger.sa_mask);
+            sigaction(SIGUSR1, &trigger, 0);
+
+            //Main Loop
+            while(1){
+                //Wait for SIGUSR1 signal from child, signifying threshold has been reached on a device
+                pause();
+                printf("Writing to cloud\n");
+                wr_res = write(cloud_fifo_fd, &actuator, sizeof(sensor));
+                //Check if write operation was successful
+                if(wr_res < 1){
+                    printf("Cloud FIFO was not written to\n");
                 }
-
-                //Check for signal
-                struct sigaction trigger;
-                trigger.sa_handler = alert_cloud;
-                trigger.sa_flags = 0;
-                sigemptyset(&trigger.sa_mask);
-                sigaction(SIGUSR1, &trigger, 0);
-
-                //Main Loop
-                while(1){
-                    //Wait for SIGUSR1 signal from child, signifying threshold has been reached on a device
-                    pause();
-                    printf("Writing to cloud\n");
-                    wr_res = write(cloud_fifo_fd, &actuator, sizeof(sensor));
-                    //Check if write operation was successful
-                    if(wr_res < 1){
-                        printf("Cloud FIFO was not written to\n");
-                    }
-                }
-                break;                     
+            }
+            break;                     
     }
     exit(0);
 }

@@ -19,7 +19,7 @@ int main(){
     while(1){
         rd_res = read(cloud_fifo_fd, &actuated, sizeof(sensor));
         if(rd_res > 0){
-            printf("A sensor has reached it's threshold, and has activated an actuator!\n");
+            printf("A sensor has reached it's threshold.\n");
         }
     }
 
