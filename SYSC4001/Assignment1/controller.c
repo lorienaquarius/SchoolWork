@@ -4,14 +4,11 @@ sensor actuator; //designated actuator
 
 //Check sensor threshold to see if the sensor's value is at it's threshold
 void check_threshold(sensor s){
+
+    //Check threshold value
     if(s.value > s.threshold){
         kill(s.sensor_pid, SIGPOLL); //send signal to sensor that it has maxed out
         kill(getppid(), SIGUSR1); //send signal to parent
-        if(actuator.name[0] != 0){
-            kill(actuator.sensor_pid, SIGALRM); //Send signal to actuator that threshold has been reached for a device
-        } else {
-            printf("Sensor has reached threshold, however no actuator has been registered\n");
-        }
     }
 }
 
@@ -23,8 +20,10 @@ void alert_cloud(){
 int main(){
 
     pid_t pid;
+    
+    //create child process
     pid = fork();
-    actuator.name[0] = 0;
+    
     switch(pid){
         case -1:
             //Failed fork
@@ -32,10 +31,11 @@ int main(){
             exit(1);
         //Child Process
         case 0:
-            
+            actuator.name[0] = 0;
             int read_result;
             sensor reader;
 
+            //Make FIFO for devices to write to controller
             mkfifo(CONTROLLER_FIFO, 0777);
             
             int controller_fifo_fd = open(CONTROLLER_FIFO, O_RDONLY);
@@ -43,11 +43,10 @@ int main(){
             if(controller_fifo_fd == -1){
                 perror("Failed to open controller FIFO");
             }
-            printf("Entering main loop\n");
+            
             do{
 
                 read_result = read(controller_fifo_fd, &reader, sizeof(sensor));
-                printf("read gave return value %d\n", read_result);
                 if(read_result > 0){
                     switch(reader.activated){
                         //device is not yet activated
@@ -59,7 +58,6 @@ int main(){
                         case 1:
                             
                             check_threshold(reader);
-                            printf("Device threshold is at %d\n", reader.threshold);
                             printf("Received sensor data from device %s, with pid %d. Value is %d / %d.\n", reader.name, reader.sensor_pid, reader.value, reader.threshold);
                             break;
                         //device is an actuator
@@ -92,10 +90,13 @@ int main(){
                 sigemptyset(&trigger.sa_mask);
                 sigaction(SIGUSR1, &trigger, 0);
 
+                //Main Loop
                 while(1){
+                    //Wait for SIGUSR1 signal from child, signifying threshold has been reached on a device
                     pause();
                     printf("Writing to cloud\n");
                     wr_res = write(cloud_fifo_fd, &actuator, sizeof(sensor));
+                    //Check if write operation was successful
                     if(wr_res < 1){
                         printf("Cloud FIFO was not written to\n");
                     }
