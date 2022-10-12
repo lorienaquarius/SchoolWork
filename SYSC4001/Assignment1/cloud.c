@@ -4,7 +4,7 @@ int main(){
 
     //create necessary FIFO so controller can write to cloud
     mkfifo(CLOUD_FIFO, 0777);
-    sensor actuated;
+    int actuated;
     int rd_res;
 
     //Open FIFO
@@ -17,9 +17,9 @@ int main(){
     //Loop that continually looks for a write from controller
     //If a write is received, that means an actuator has gone off
     while(1){
-        rd_res = read(cloud_fifo_fd, &actuated, sizeof(sensor));
+        rd_res = read(cloud_fifo_fd, &actuated, sizeof(int));
         if(rd_res > 0){
-            printf("A sensor has reached it's threshold.\n");
+            printf("A sensor has reached it's threshold and the actuator has been turned %s.\n", actuated == 0 ? "Off":"On");
         }
     }
 

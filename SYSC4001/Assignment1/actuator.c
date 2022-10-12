@@ -1,7 +1,7 @@
 #include "files.h"
 
 void action(){
-    printf("Actuator has been switched\n");
+    printf("Actuator has been toggled\n");
 }
 
 
@@ -37,6 +37,7 @@ int main(int argc, char* argv[]){
 
     while(1){
         //wait for incoming signal
+        printf("Waiting for threshold reached signal\n");
         pause();
     }
 

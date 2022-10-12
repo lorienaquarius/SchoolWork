@@ -5,9 +5,8 @@
 int controller_fifo_fd;
 sensor device;
 void stop(){
-    printf("Sensor has reached threshold, stopping device.\n");
-    close(controller_fifo_fd);
-    unlink(CONTROLLER_FIFO);
+    printf("Sensor has reached threshold, and has been signalled to stop. Stopping device.\n");
+    exit(0);
 }
 
 void acknowledge(){
@@ -51,6 +50,8 @@ int main(int argc, char* argv[]){
     ack.sa_flags = 0;
     sigemptyset(&ack.sa_mask);
     sigaction(SIGCONT, &ack, 0);
+
+    printf("Awaiting controller acknowledge\n");
 
     pause();
 

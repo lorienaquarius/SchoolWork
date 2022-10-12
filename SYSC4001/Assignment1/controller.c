@@ -1,25 +1,34 @@
 #include "files.h"
 
 sensor actuator; //designated actuator
-
+int actuator_state;
 //Check sensor threshold to see if the sensor's value is at it's threshold
 void check_threshold(sensor s){
 
     //Check threshold value
     if(s.value > s.threshold){
+        printf("Threshold value reached. Sending sensor stop signal, actuator activate signal, and cloud write signal\n");
         kill(s.sensor_pid, SIGPOLL); //send signal to sensor that it has maxed out and to stop
-        kill(getppid(), SIGUSR1); //send signal to parent
-        if(actuator.name[0] != 0){
-            kill(actuator.sensor_pid, SIGALRM); //Send signal to actuator that threshold has been reached for a device
-        } else {
-            printf("Sensor has reached threshold, however no actuator has been registered\n");
+        switch(actuator.value){
+            case 0:
+                kill(getppid(), SIGUSR1);
+                actuator.value = 1;
+                break;
+            case 1:
+                kill(getppid(), SIGUSR2);
+                actuator.value = 0;
+                break;
+
         }
+        kill(actuator.sensor_pid, SIGALRM);
     }
 }
 
 //Dummy function so parent process signal handler has a function to use
 void alert_cloud(){
-    return;
+    
+    actuator_state = actuator_state == 0 ? 1:0;
+    
 }
 
 int main(){
@@ -56,8 +65,9 @@ int main(){
                     switch(reader.activated){
                         //device is not yet activated
                         case 0:
+                            printf("Device not yet activated. Sending acknowledge\n");
                             kill(reader.sensor_pid, SIGCONT);
-                            printf("activating sensor\n");
+                            printf("activated sensor\n");
                             break;
                         //device is activated
                         case 1:
@@ -69,7 +79,7 @@ int main(){
                         case -1:
                             actuator = reader;
                             printf("Actuator Registered with name %s, pid %d\n", actuator.name, actuator.sensor_pid);
-                            
+                            actuator.value = 0;
                             break;
                         }
                     }  
@@ -94,13 +104,16 @@ int main(){
             trigger.sa_flags = 0;
             sigemptyset(&trigger.sa_mask);
             sigaction(SIGUSR1, &trigger, 0);
+            sigaction(SIGUSR2, &trigger, 0);
+            
 
             //Main Loop
             while(1){
                 //Wait for SIGUSR1 signal from child, signifying threshold has been reached on a device
+                printf("Waiting for actuator toggle signal\n");
                 pause();
-                printf("Writing to cloud\n");
-                wr_res = write(cloud_fifo_fd, &actuator, sizeof(sensor));
+                printf("Actuator toggle signal received. Writing to cloud\n");
+                wr_res = write(cloud_fifo_fd, &actuator_state, sizeof(int));
                 //Check if write operation was successful
                 if(wr_res < 1){
                     printf("Cloud FIFO was not written to\n");
