@@ -67,7 +67,6 @@ int main(int argc, char* argv[]){
     sigaction(SIGPOLL, &die, 0);
     while(1){
         device.value++;
-        printf("Device value now %d\n", device.value);
         result = write(controller_fifo_fd, &device, sizeof(device));
         if(result < 0){
             printf("FIFO could not be written to\n");
