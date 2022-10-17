@@ -14,6 +14,7 @@ int main()
     int running = 1;
     struct my_msg_st some_data;
     int msgid;
+    int msg_to_receive = getpid();
     char buffer[BUFSIZ];
     msgid = msgget((key_t)1234, 0666 | IPC_CREAT);
     if (msgid == -1) {
@@ -23,7 +24,7 @@ int main()
     while(running) {
         printf("Enter some text: ");
         fgets(buffer, BUFSIZ, stdin);
-        some_data.my_msg_type = 1;
+        some_data.my_msg_type = getpid();
         strcpy(some_data.some_text, buffer);
         if (msgsnd(msgid, (void *)&some_data, MAX_TEXT, 0) == -1) {
             fprintf(stderr, "msgsnd failed\n");
@@ -31,6 +32,12 @@ int main()
         }
         if (strncmp(buffer, "end", 3) == 0) {
             running = 0;
+        }
+        if (msgrcv(msgid, (void *)&some_data, BUFSIZ, msg_to_receive, 0) == -1) {
+            fprintf(stderr, "msgrcv failed with error: %d\n", errno);
+            exit(EXIT_FAILURE);
+        } else {
+            printf("Successfully received message from server, PID is %d\n", some_data.my_msg_type);
         }
     }
     exit(EXIT_SUCCESS);

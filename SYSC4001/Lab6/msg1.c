@@ -4,6 +4,7 @@
 #include <errno.h>
 #include <unistd.h>
 #include <sys/msg.h>
+#define MAX_TEXT 512
 struct my_msg_st {
     long int my_msg_type;
     char some_text[BUFSIZ];
@@ -21,12 +22,16 @@ int main()
     }
     while(running) {
         if (msgrcv(msgid, (void *)&some_data, BUFSIZ, msg_to_receive, 0) == -1) {
-                fprintf(stderr, "msgrcv failed with error: %d\n", errno);
-                exit(EXIT_FAILURE);
-            }
-            printf("You wrote: %s", some_data.some_text);
-            if (strncmp(some_data.some_text, "end", 3) == 0) {
-                running = 0;
+            fprintf(stderr, "msgrcv failed with error: %d\n", errno);
+            exit(EXIT_FAILURE);
+        }
+        printf("You wrote: %s", some_data.some_text);
+        if (strncmp(some_data.some_text, "end", 3) == 0) {
+            running = 0;
+        }
+        if (msgsnd(msgid, (void *)&some_data, MAX_TEXT, 0) == -1) {
+            fprintf(stderr, "msgsnd failed\n");
+            exit(EXIT_FAILURE);
         }
     }
     if (msgctl(msgid, IPC_RMID, 0) == -1) {

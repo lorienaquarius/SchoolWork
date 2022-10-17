@@ -1,0 +1,4 @@
+gcc msg1.c -o msg1
+gcc msg2.c -o msg2
+xterm -T server &
+xterm -T client &
