@@ -1,0 +1,2 @@
+gcc sem1.c -o sem1
+xterm -T Semaphore example &
