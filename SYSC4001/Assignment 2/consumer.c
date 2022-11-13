@@ -41,19 +41,22 @@ int main(){
     struct sembuf wait = {0, -1, SEM_UNDO};
     struct sembuf signal = {0, 1, SEM_UNDO};
     
-    
+    //write file descriptor
     int write_file_fd = open("write.txt", O_WRONLY);
 
     if(write_file_fd == -1){
         perror("Could not open read file\n");
     }
 
+    //get shared memory ID
     int shm_id = shmget((key_t) 1234, (size_t) (sizeof(buffer) * NUM_BUFFER), 0777 | IPC_CREAT);
     
     if(shm_id == -1){
         perror("could not create shared memory\n");
     }
+    //shared memory variable
     buffer *shm;
+    //attach shared memory
     shm = (buffer *)shmat(shm_id, (void *)0, SHM_RND);
     if(shm == (buffer *)-1){
         perror("could not attach shared memory\n");
@@ -76,7 +79,7 @@ int main(){
             perror("Semaphore S operation wait failed\n");
         }
 
-
+        //critical section
         strcpy(temp.data, shm[out].data);
         temp.count = shm[out].count;
 
@@ -92,15 +95,18 @@ int main(){
         if(success == -1){
             perror("Semaphore E operation signal failed\n");
         }
+        //if temp.data contains null character, file is done
         for(int i = 0; i < 128; i++){
             if(temp.data[i] == '\0'){
                 done = 0;
+                //if null character is contained, don't want to write all 128 bytes
                 payload_size = i;
             }
         }
         out = (out + 1) % 100;
         byte_count += temp.count;
 
+        //write to file
         success = write(write_file_fd, &temp.data, payload_size);
         if(success == -1){
             perror("Write operation failed\n");
@@ -108,11 +114,13 @@ int main(){
 
     }
     printf("Total bytes read from shared memory: %ld\n", byte_count);
+    //detach memory
     success = shmdt(shm);
     if(success == -1){
         printf("Could not detach shared memory\n");
     }
 
+    //destroy semaphores now that everything is consumed
     success = semctl(S, 0, IPC_RMID, 0);
 
     if(success == -1){
@@ -130,6 +138,7 @@ int main(){
         printf("Could not delete semaphore N\n");
     }
 
+    //close files
     success = close(write_file_fd);
 
     if (success == -1){
