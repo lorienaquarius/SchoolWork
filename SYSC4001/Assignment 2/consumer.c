@@ -61,17 +61,16 @@ int main(){
 
     buffer temp;
     int done = 1;
-    long int byte_count;
+    long int byte_count = 0;
     int success;
     int out = 0;
+    int payload_size = 128;
     while(done){
         //wait(n), wait(s)
-        printf("Waiting on N\n");
         success = semop(N, &wait, 1);
         if(success == -1){
             perror("Semaphore N operation wait failed\n");
         }
-        printf("waiting on S\n");
         success = semop(S, &wait, 1);
         if(success == -1){
             perror("Semaphore S operation wait failed\n");
@@ -80,17 +79,10 @@ int main(){
 
         strcpy(temp.data, shm[out].data);
         temp.count = shm[out].count;
-        if(temp.data[0] == '\0'){
-            done = 0;
-        }
-        printf("Consumer copied over data as string: %s\n", shm[out].data);
-        out = (out + 1) % 100;
-        byte_count += sizeof(temp);
-
 
         //signal(s), signal(e)
         success = semop(S, &signal, 1);
-        
+
         if(success == -1){
             perror("Semaphore S operation signal failed\n");
         }
@@ -100,20 +92,22 @@ int main(){
         if(success == -1){
             perror("Semaphore E operation signal failed\n");
         }
+        for(int i = 0; i < 128; i++){
+            if(temp.data[i] == '\0'){
+                done = 0;
+                payload_size = i;
+            }
+        }
+        out = (out + 1) % 100;
+        byte_count += temp.count;
 
-        success = write(write_file_fd, &temp.data, sizeof(temp.data));
-
+        success = write(write_file_fd, &temp.data, payload_size);
         if(success == -1){
             perror("Write operation failed\n");
         }
 
     }
-    success = write(write_file_fd, '\0', 1);
-    if (success == -1){
-        printf("Failed to write null character to end of file\n");
-    }
     printf("Total bytes read from shared memory: %ld\n", byte_count);
-    free(shm);
     success = shmdt(shm);
     if(success == -1){
         printf("Could not detach shared memory\n");
