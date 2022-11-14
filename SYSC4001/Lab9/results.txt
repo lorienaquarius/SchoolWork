@@ -1,0 +1,2 @@
+pid= 3758, Time to create fork: 211
+pid= 3758, Time to create thread: 75

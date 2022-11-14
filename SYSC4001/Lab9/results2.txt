@@ -1,0 +1,19 @@
+pid= 5392, Time for single threaded application: 15000
+thread_function is running.
+thread_function is running.
+thread_function is running.
+thread_function is running.
+thread_function is running.
+thread_function is running.
+Waiting for threads to finish...
+thread_function is running.
+thread_function is running.
+Picked up a thread
+Picked up a thread
+Picked up a thread
+Picked up a thread
+Picked up a thread
+Picked up a thread
+Picked up a thread
+Picked up a thread
+pid= 5392, Time taken for 8 threads: 4585
