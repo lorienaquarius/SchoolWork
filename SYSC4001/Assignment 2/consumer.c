@@ -70,10 +70,12 @@ int main(){
     int payload_size = 128;
     while(done){
         //wait(n), wait(s)
+        // printf("Waiting on N\n");
         success = semop(N, &wait, 1);
         if(success == -1){
             perror("Semaphore N operation wait failed\n");
         }
+        // printf("Waiting on S\n");
         success = semop(S, &wait, 1);
         if(success == -1){
             perror("Semaphore S operation wait failed\n");
@@ -119,7 +121,10 @@ int main(){
     if(success == -1){
         printf("Could not detach shared memory\n");
     }
-
+    success = shmctl(shm_id, IPC_RMID, 0);
+    if(success == -1){
+        printf("Could not destroy memory\n");
+    }
     //destroy semaphores now that everything is consumed
     success = semctl(S, 0, IPC_RMID, 0);
 

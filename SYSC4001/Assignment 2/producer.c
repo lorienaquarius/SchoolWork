@@ -87,17 +87,7 @@ int main(){
     
     while(read(read_file_fd, buf, BUFSIZ)){
         
-        //wait(e), wait(s)
 
-        success = semop(E, &wait, 1);
-        if(success == -1){
-            perror("Semaphore E operation wait failed\n");
-        }
-        
-        success = semop(S, &wait, 1);
-        if(success == -1){
-            perror("Semaphore S operation wait failed\n");
-        }
         //critical section
          
         for(int i = 0; i < BUFSIZ / 128; i++){
@@ -109,13 +99,32 @@ int main(){
             if(temp.data[0] == '\0'){
                 continue;
             }
+
+            //wait(e), wait(s)
+
+            success = semop(E, &wait, 1);
+            if(success == -1){
+                perror("Semaphore E operation wait failed\n");
+            }
+            
+            success = semop(S, &wait, 1);
+            if(success == -1){
+                perror("Semaphore S operation wait failed\n");
+            }
+
             //append(v)
             shm[in] = temp;
 
             //signal(s), signal(n)
-            semop(S, &signal, 1);
-            semop(N, &signal, 1);
+            success = semop(S, &signal, 1);
+            if(success == -1){
+                perror("S signal failed\n");
+            }
+            success = semop(N, &signal, 1);
 
+            if(success == -1){
+                perror("N signal failed\n");
+            }
             //increment index
             in = (in + 1) % 100;
             //increment bytes written
@@ -123,6 +132,7 @@ int main(){
 
 
         }
+        memset(buf, 0, BUFSIZ);
 
     }
     
