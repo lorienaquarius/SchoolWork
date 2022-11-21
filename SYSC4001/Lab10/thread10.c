@@ -6,19 +6,42 @@
 
 #define NUM_CORES 4
 #define NUM_PROCESSES 3
+
 #define MAX(X, Y) (X > Y ? X:Y)
 #define MIN(X, Y) (X > Y ? Y:X)
 typedef struct buffer {
     pid_t pid;
     int sp;
     int dp;
-    int remain_time;
-    int time_slice;
-    int accu_time_slice;
+    long int remain_time;
+    long int time_slice;
+    long int accu_time_slice;
     pthread_t thread_id;
 } buffer;
 
 int threads_finished = 0;
+int produced = 0;
+buffer buffers[NUM_CORES][NUM_PROCESSES];
+void *producer(void *arg){
+
+    printf("Producer is producing data...\n");
+
+    int count = 0;
+
+    for(int i = 0; i < NUM_CORES; i++){
+        for(int j = 0; j < NUM_PROCESSES; j++){
+            buffers[i][j].pid = count;
+            buffers[i][j].sp = 120;
+            buffers[i][j].dp = 120;
+            buffers[i][j].remain_time = (rand()%(21 - 5) + 5) * 1000; //put in millis
+            buffers[i][j].time_slice = 100;
+            buffers[i][j].accu_time_slice = 0;
+            count++;
+        }
+    }
+    produced = 1;
+
+}
 
 void *consumer(void *arg){
     buffer *processes = (buffer *)arg;
@@ -26,16 +49,15 @@ void *consumer(void *arg){
     int bonus = rand()%11;
     for(int i = 0; i < NUM_PROCESSES; i++){
         current = processes[i];
-        printf("Current process information:\nCalling process PID: %d\nStatic Priority: %d\nDynamic Priority: %d\nRemaining execution time: %d\nTime slice: %d\nAccumulated time slice: %d\nThread ID: %d\n",
-                current.pid, current.sp, current.dp, current.time_slice, current.accu_time_slice, current.thread_id);
+        printf("Current process information:\nCalling process PID: %d\nStatic Priority: %d\nDynamic Priority: %d\nRemaining execution time: %dms\nTime slice: %dus\nAccumulated time slice: %dms\nThread ID: %d\n\n",
+                current.pid, current.sp, current.dp, current.remain_time, current.time_slice, current.accu_time_slice, current.thread_id);
         current.dp = MAX(100, MIN(current.sp - bonus + 5, 139));
-        current.sp = current.dp;
-        current.time_slice = current.sp < 120 ? ((140 - current.sp)*20000):((140 - current.sp)*5000);
+        current.time_slice = current.sp < 120 ? ((140 - current.dp)*20000):((140 - current.dp)*5000);
         usleep(current.time_slice); 
-        current.accu_time_slice += current.time_slice;
-        current.remain_time -= current.time_slice;
-        printf("Current process information after processing:\nCalling process PID: %d\nStatic Priority: %d\nDynamic Priority: %d\nRemaining execution time: %d\nTime slice: %d\nAccumulated time slice: %d\nThread ID: %d\n",
-                current.pid, current.sp, current.dp, current.time_slice, current.accu_time_slice, current.thread_id);
+        current.accu_time_slice += current.time_slice / 1000;
+        current.remain_time -= current.time_slice / 1000;
+        printf("Current process information after processing:\nCalling process PID: %d\nStatic Priority: %d\nDynamic Priority: %d\nRemaining execution time: %dms\nTime slice: %dms\nAccumulated time slice: %dms\nThread ID: %d\n\n",
+                current.pid, current.sp, current.dp, current.remain_time, current.time_slice/1000, current.accu_time_slice, current.thread_id);
     }
     threads_finished++;
 }
@@ -46,7 +68,7 @@ int main(){
     int res;
     pthread_t threads[NUM_CORES];
     pthread_attr_t attribute;
-    buffer buffers[NUM_CORES][NUM_PROCESSES];
+    
     struct sched_param scheduling_value;
     int max_prio;
     int min_prio;
@@ -71,19 +93,20 @@ int main(){
 
     res = pthread_attr_setschedparam(&attribute, &scheduling_value);
     
-
-    for(int i = 0; i < NUM_CORES; i++){
-        for(int j = 0; j < NUM_PROCESSES; j++){
-            buffers[i][j].pid = getpid();
-            buffers[i][j].sp = 120;
-            buffers[i][j].dp = 0;
-            buffers[i][j].remain_time = rand()%(21 - 5) + 5;
-            buffers[i][j].time_slice = 100;
-            buffers[i][j].accu_time_slice = 0;
-            
-        }
+    if(res != 0){
+        perror("could not set scheduling parameters\n");
     }
+    pthread_t producer_thread;
 
+    res = pthread_create(&producer_thread, &attribute, producer, NULL);
+
+    scheduling_value.sched_priority = max_prio;
+    res = pthread_attr_setschedparam(&attribute, &scheduling_value);
+
+
+    while(!produced){
+        usleep(1000);
+    }
 
     for(int i = 0; i < NUM_CORES; i++){
         res = pthread_create(&threads[i], &attribute, consumer, (void *)buffers[i]);
