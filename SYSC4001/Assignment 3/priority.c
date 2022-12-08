@@ -5,7 +5,7 @@
 #include <time.h>
 
 #define NUM_CORES 4
-#define NUM_PROCESSES 9
+#define NUM_PROCESSES 5
 
 #define MAX(X, Y) (X > Y ? X:Y)
 #define MIN(X, Y) (X > Y ? Y:X)
@@ -80,16 +80,17 @@ void *producer(void *arg){
 }
 
 //put in seperate function because it may need to be run again
-int run_RQ1(buffer* RQ1, int process_count, buffer* RQ2, int* in_RQ2){
-    int processes_done = 1;
+int run_RQ1(buffer* RQ1, int process_count, buffer* RQ2, int in_RQ2){
+    int processes_done = 0;
     //if all processes in RQ1 were run to completion and none sent to RQ2, return 1
     //if at least one process was sent up to RQ2, return 0
-    int finished_all = 0;
-    int lowest_value = 140;
-    int prio_index = -1;
+    int processes_moved = 0;
 
     //find highest priority process
     while(processes_done < process_count){
+
+        int lowest_value = 140;
+        int prio_index = -1;
         //Get highest priority task
         for(int i = 0; i < process_count; i++){
             if(RQ1[i].dp < lowest_value){
@@ -111,6 +112,12 @@ int run_RQ1(buffer* RQ1, int process_count, buffer* RQ2, int* in_RQ2){
         current->accu_time_slice += MIN(current->time_slice, current->remain_time);
         current->remain_time -= current->time_slice;
         
+
+        //Random dynamic priority
+        int bonus = rand()%11;
+        current->dp = MAX(100, MIN(current->dp - bonus + 5, 139));
+        current->time_slice = current->dp < 120 ? ((140 - current->sp) * 20) : ((140 - current->dp) * 5);
+
         //See if process is done
         if(current->remain_time <= 0){
             current->remain_time = 0;
@@ -118,34 +125,30 @@ int run_RQ1(buffer* RQ1, int process_count, buffer* RQ2, int* in_RQ2){
             current->dp = 140; //Set DP to highest possible value so other processes in priority Queue will run instead of this
             total_processes_finished++;
         }
-        //Random dynamic priority
-        int bonus = rand()%11;
-        current->dp = MAX(100, MIN(current->dp - bonus + 5, 139));
-        current->time_slice = current->dp < 120 ? ((140 - current->sp) * 20) : ((140 - current->dp) * 5);
 
         printf("Current process information after processing:\nCalling process PID: %d from priority Queue 1\nProcess Scheduling type: %s\nStatic Priority: %d\nDynamic Priority: %d\nRemaining execution time: %dms\nTime slice: %dms\nAccumulated time slice: %dms\nThread ID: %d\n\n",
                 current->pid, scheduling_types[current->process_policy], current->sp, current->dp, current->remain_time, current->time_slice, current->accu_time_slice, current->thread_id);
 
         //If dynamic priority exceeds limit for this priority queue and isn't using the shelved priority, put it into the next one, and increment process counter for that queue
         if((current->dp > 129) && (current->dp < 140)){
-            RQ2[*in_RQ2] = *current;
-            (*in_RQ2) ++;
+            RQ2[in_RQ2 + processes_moved] = *current;
             processes_done++;
-            finished_all = 0;
+            processes_moved++;
         }
 
     }
-    return finished_all;
+    return processes_moved;
 }
 
 void run_RQ2(buffer* RQ2, int process_count, buffer* RQ1){
     int processes_done = 0;
 
-    int lowest_value = 140;
-    int prio_index = -1;
+
 
     //find highest priority process
     while(processes_done < process_count){
+        int lowest_value = 140;
+        int prio_index = -1;
         for(int i = 0; i < process_count; i++){
             if(RQ2[i].dp < lowest_value){
                 lowest_value = RQ1[i].dp;
@@ -166,6 +169,12 @@ void run_RQ2(buffer* RQ2, int process_count, buffer* RQ1){
         current->accu_time_slice += MIN(current->time_slice, current->remain_time);
         current->remain_time -= current->time_slice;
         
+
+        //Random dynamic priority
+        int bonus = rand()%11;
+        current->dp = MAX(100, MIN(current->dp - bonus + 5, 139));
+        current->time_slice = current->dp < 120 ? ((140 - current->sp) * 20) : ((140 - current->dp) * 5);
+
         //See if process is done
         if(current->remain_time <= 0){
             current->remain_time = 0;
@@ -173,19 +182,14 @@ void run_RQ2(buffer* RQ2, int process_count, buffer* RQ1){
             current->dp = 140; //Set DP to highest possible value so other processes in priority Queue will run instead of this
             total_processes_finished++;
         }
-        //Random dynamic priority
-        int bonus = rand()%11;
-        current->dp = MAX(100, MIN(current->dp - bonus + 5, 139));
-        current->time_slice = current->dp < 120 ? ((140 - current->sp) * 20) : ((140 - current->dp) * 5);
 
         printf("Current process information after processing:\nCalling process PID: %d from priority Queue 2\nProcess Scheduling type: %s\nStatic Priority: %d\nDynamic Priority: %d\nRemaining execution time: %dms\nTime slice: %dms\nAccumulated time slice: %dms\nThread ID: %d\n\n",
                 current->pid, scheduling_types[current->process_policy], current->sp, current->dp, current->remain_time, current->time_slice, current->accu_time_slice, current->thread_id);
 
         //If dynamic priority exceeds limit for this priority queue, put it into the next one, and increment process counter for that queue
         if(current->dp < 130){
-            RQ2[0] = *current;
-            processes_done += run_RQ1(RQ1, 1, RQ2, &process_count);
-            
+            RQ1[0] = *current;
+            processes_done += 1 - run_RQ1(RQ1, 1, RQ2, prio_index);
         }
     }
 }
@@ -267,7 +271,7 @@ void *consumer(void *arg){
         printf("Current process information after processing:\nCalling process PID: %d from priority Queue 0\nProcess Scheduling type: %s\nStatic Priority: %d\nDynamic Priority: %d\nRemaining execution time: %dms\nTime slice: %dms\nAccumulated time slice: %dms\nThread ID: %d\n\n",
                 current->pid, scheduling_types[current->process_policy], current->sp, current->dp, current->remain_time, current->time_slice, current->accu_time_slice, current->thread_id);
     }
-    run_RQ1(RQ1, num_RQ1, RQ2, &num_RQ2);
+    num_RQ2 += run_RQ1(RQ1, num_RQ1, RQ2, num_RQ2);
     run_RQ2(RQ2, num_RQ2, RQ1);
 
     threads_finished++;
