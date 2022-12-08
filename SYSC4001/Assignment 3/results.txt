@@ -1,0 +1,2886 @@
+Producer is producing data...
+Produced process with PID 0, sp of 61, scheduling type FIFO, and remaining time of 6000ms
+Produced process with PID 1, sp of 40, scheduling type RR, and remaining time of 7000ms
+Produced process with PID 2, sp of 101, scheduling type NORMAL, and remaining time of 15000ms
+Produced process with PID 3, sp of 120, scheduling type NORMAL, and remaining time of 14000ms
+Produced process with PID 4, sp of 111, scheduling type NORMAL, and remaining time of 15000ms
+Produced process with PID 5, sp of 113, scheduling type NORMAL, and remaining time of 9000ms
+Produced process with PID 6, sp of 114, scheduling type NORMAL, and remaining time of 15000ms
+Produced process with PID 7, sp of 121, scheduling type NORMAL, and remaining time of 9000ms
+Produced process with PID 8, sp of 121, scheduling type NORMAL, and remaining time of 11000ms
+Produced process with PID 9, sp of 38, scheduling type FIFO, and remaining time of 16000ms
+Produced process with PID 10, sp of 47, scheduling type RR, and remaining time of 14000ms
+Produced process with PID 11, sp of 117, scheduling type NORMAL, and remaining time of 19000ms
+Produced process with PID 12, sp of 102, scheduling type NORMAL, and remaining time of 15000ms
+Produced process with PID 13, sp of 125, scheduling type NORMAL, and remaining time of 19000ms
+Produced process with PID 14, sp of 129, scheduling type NORMAL, and remaining time of 9000ms
+Produced process with PID 15, sp of 129, scheduling type NORMAL, and remaining time of 8000ms
+Produced process with PID 16, sp of 108, scheduling type NORMAL, and remaining time of 18000ms
+Produced process with PID 17, sp of 130, scheduling type NORMAL, and remaining time of 10000ms
+Produced process with PID 18, sp of 58, scheduling type FIFO, and remaining time of 7000ms
+Produced process with PID 19, sp of 38, scheduling type RR, and remaining time of 9000ms
+Produced process with PID 20, sp of 101, scheduling type NORMAL, and remaining time of 7000ms
+Produced process with PID 21, sp of 116, scheduling type NORMAL, and remaining time of 13000ms
+Produced process with PID 22, sp of 101, scheduling type NORMAL, and remaining time of 6000ms
+Produced process with PID 23, sp of 102, scheduling type NORMAL, and remaining time of 6000ms
+Produced process with PID 24, sp of 109, scheduling type NORMAL, and remaining time of 14000ms
+Produced process with PID 25, sp of 104, scheduling type NORMAL, and remaining time of 10000ms
+Produced process with PID 26, sp of 114, scheduling type NORMAL, and remaining time of 5000ms
+Produced process with PID 27, sp of 44, scheduling type FIFO, and remaining time of 13000ms
+Produced process with PID 28, sp of 42, scheduling type RR, and remaining time of 19000ms
+Produced process with PID 29, sp of 103, scheduling type NORMAL, and remaining time of 15000ms
+Produced process with PID 30, sp of 105, scheduling type NORMAL, and remaining time of 14000ms
+Produced process with PID 31, sp of 103, scheduling type NORMAL, and remaining time of 12000ms
+Produced process with PID 32, sp of 115, scheduling type NORMAL, and remaining time of 7000ms
+Produced process with PID 33, sp of 119, scheduling type NORMAL, and remaining time of 19000ms
+Produced process with PID 34, sp of 120, scheduling type NORMAL, and remaining time of 16000ms
+Produced process with PID 35, sp of 119, scheduling type NORMAL, and remaining time of 7000ms
+Data produced! Created 36 processes
+
+Buffer array given is array 0
+Copied over process with PID 0, sp of 61, scheduling type FIFO, and remaining time of 6000ms
+Copied over process with PID 1, sp of 40, scheduling type RR, and remaining time of 7000ms
+Copied over process with PID 2, sp of 101, scheduling type NORMAL, and remaining time of 15000ms
+Copied over process with PID 3, sp of 120, scheduling type NORMAL, and remaining time of 14000ms
+Copied over process with PID 4, sp of 111, scheduling type NORMAL, and remaining time of 15000ms
+Copied over process with PID 5, sp of 113, scheduling type NORMAL, and remaining time of 9000ms
+Copied over process with PID 6, sp of 114, scheduling type NORMAL, and remaining time of 15000ms
+Copied over process with PID 7, sp of 121, scheduling type NORMAL, and remaining time of 9000ms
+Copied over process with PID 8, sp of 121, scheduling type NORMAL, and remaining time of 11000ms
+Lowest priority value is at index 1
+Current process information:
+Calling process PID: 1 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 40
+Dynamic Priority: 40
+Remaining execution time: 7000ms
+Time slice: 10ms
+Accumulated time slice: 0ms
+Thread ID: -1569024320
+
+Current process information after processing:
+Calling process PID: 1 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 40
+Dynamic Priority: 40
+Remaining execution time: 6990ms
+Time slice: 2000ms
+Accumulated time slice: 10ms
+Thread ID: -1569024320
+
+Lowest priority value is at index 1
+Current process information:
+Calling process PID: 1 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 40
+Dynamic Priority: 40
+Remaining execution time: 6990ms
+Time slice: 2000ms
+Accumulated time slice: 10ms
+Thread ID: -1569024320
+
+Buffer array given is array 1
+Copied over process with PID 9, sp of 38, scheduling type FIFO, and remaining time of 16000ms
+Copied over process with PID 10, sp of 47, scheduling type RR, and remaining time of 14000ms
+Copied over process with PID 11, sp of 117, scheduling type NORMAL, and remaining time of 19000ms
+Copied over process with PID 12, sp of 102, scheduling type NORMAL, and remaining time of 15000ms
+Copied over process with PID 13, sp of 125, scheduling type NORMAL, and remaining time of 19000ms
+Copied over process with PID 14, sp of 129, scheduling type NORMAL, and remaining time of 9000ms
+Copied over process with PID 15, sp of 129, scheduling type NORMAL, and remaining time of 8000ms
+Copied over process with PID 16, sp of 108, scheduling type NORMAL, and remaining time of 18000ms
+Copied over process with PID 17, sp of 130, scheduling type NORMAL, and remaining time of 10000ms
+Lowest priority value is at index 0
+Current process information:
+Calling process PID: 9 from priority Queue 0
+Process Scheduling type: FIFO
+Static Priority: 38
+Dynamic Priority: 38
+Remaining execution time: 16000ms
+Time slice: 16000ms
+Accumulated time slice: 0ms
+Thread ID: -1577417024
+
+Buffer array given is array 2
+Copied over process with PID 18, sp of 58, scheduling type FIFO, and remaining time of 7000ms
+Copied over process with PID 19, sp of 38, scheduling type RR, and remaining time of 9000ms
+Copied over process with PID 20, sp of 101, scheduling type NORMAL, and remaining time of 7000ms
+Copied over process with PID 21, sp of 116, scheduling type NORMAL, and remaining time of 13000ms
+Copied over process with PID 22, sp of 101, scheduling type NORMAL, and remaining time of 6000ms
+Copied over process with PID 23, sp of 102, scheduling type NORMAL, and remaining time of 6000ms
+Copied over process with PID 24, sp of 109, scheduling type NORMAL, and remaining time of 14000ms
+Copied over process with PID 25, sp of 104, scheduling type NORMAL, and remaining time of 10000ms
+Copied over process with PID 26, sp of 114, scheduling type NORMAL, and remaining time of 5000ms
+Lowest priority value is at index 1
+Current process information:
+Calling process PID: 19 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 38
+Dynamic Priority: 38
+Remaining execution time: 9000ms
+Time slice: 10ms
+Accumulated time slice: 0ms
+Thread ID: -1585809728
+
+Current process information after processing:
+Calling process PID: 1 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 40
+Dynamic Priority: 40
+Remaining execution time: 4990ms
+Time slice: 2000ms
+Accumulated time slice: 2010ms
+Thread ID: -1569024320
+
+Lowest priority value is at index 1
+Current process information:
+Calling process PID: 1 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 40
+Dynamic Priority: 40
+Remaining execution time: 4990ms
+Time slice: 2000ms
+Accumulated time slice: 2010ms
+Thread ID: -1569024320
+
+Current process information after processing:
+Calling process PID: 19 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 38
+Dynamic Priority: 38
+Remaining execution time: 8990ms
+Time slice: 2040ms
+Accumulated time slice: 10ms
+Thread ID: -1585809728
+
+Lowest priority value is at index 1
+Current process information:
+Calling process PID: 19 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 38
+Dynamic Priority: 38
+Remaining execution time: 8990ms
+Time slice: 2040ms
+Accumulated time slice: 10ms
+Thread ID: -1585809728
+
+Buffer array given is array 3
+Copied over process with PID 27, sp of 44, scheduling type FIFO, and remaining time of 13000ms
+Copied over process with PID 28, sp of 42, scheduling type RR, and remaining time of 19000ms
+Copied over process with PID 29, sp of 103, scheduling type NORMAL, and remaining time of 15000ms
+Copied over process with PID 30, sp of 105, scheduling type NORMAL, and remaining time of 14000ms
+Copied over process with PID 31, sp of 103, scheduling type NORMAL, and remaining time of 12000ms
+Copied over process with PID 32, sp of 115, scheduling type NORMAL, and remaining time of 7000ms
+Copied over process with PID 33, sp of 119, scheduling type NORMAL, and remaining time of 19000ms
+Copied over process with PID 34, sp of 120, scheduling type NORMAL, and remaining time of 16000ms
+Copied over process with PID 35, sp of 119, scheduling type NORMAL, and remaining time of 7000ms
+Lowest priority value is at index 1
+Current process information:
+Calling process PID: 28 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 42
+Dynamic Priority: 42
+Remaining execution time: 19000ms
+Time slice: 10ms
+Accumulated time slice: 0ms
+Thread ID: -1594202432
+
+Current process information after processing:
+Calling process PID: 28 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 42
+Dynamic Priority: 42
+Remaining execution time: 18990ms
+Time slice: 1960ms
+Accumulated time slice: 10ms
+Thread ID: -1594202432
+
+Lowest priority value is at index 1
+Current process information:
+Calling process PID: 28 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 42
+Dynamic Priority: 42
+Remaining execution time: 18990ms
+Time slice: 1960ms
+Accumulated time slice: 10ms
+Thread ID: -1594202432
+
+Current process information after processing:
+Calling process PID: 1 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 40
+Dynamic Priority: 40
+Remaining execution time: 2990ms
+Time slice: 2000ms
+Accumulated time slice: 4010ms
+Thread ID: -1569024320
+
+Lowest priority value is at index 1
+Current process information:
+Calling process PID: 1 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 40
+Dynamic Priority: 40
+Remaining execution time: 2990ms
+Time slice: 2000ms
+Accumulated time slice: 4010ms
+Thread ID: -1569024320
+
+Current process information after processing:
+Calling process PID: 19 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 38
+Dynamic Priority: 38
+Remaining execution time: 6950ms
+Time slice: 2040ms
+Accumulated time slice: 2050ms
+Thread ID: -1585809728
+
+Lowest priority value is at index 1
+Current process information:
+Calling process PID: 19 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 38
+Dynamic Priority: 38
+Remaining execution time: 6950ms
+Time slice: 2040ms
+Accumulated time slice: 2050ms
+Thread ID: -1585809728
+
+Current process information after processing:
+Calling process PID: 28 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 42
+Dynamic Priority: 42
+Remaining execution time: 17030ms
+Time slice: 1960ms
+Accumulated time slice: 1970ms
+Thread ID: -1594202432
+
+Lowest priority value is at index 1
+Current process information:
+Calling process PID: 28 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 42
+Dynamic Priority: 42
+Remaining execution time: 17030ms
+Time slice: 1960ms
+Accumulated time slice: 1970ms
+Thread ID: -1594202432
+
+Current process information after processing:
+Calling process PID: 1 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 40
+Dynamic Priority: 40
+Remaining execution time: 990ms
+Time slice: 2000ms
+Accumulated time slice: 6010ms
+Thread ID: -1569024320
+
+Lowest priority value is at index 1
+Current process information:
+Calling process PID: 1 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 40
+Dynamic Priority: 40
+Remaining execution time: 990ms
+Time slice: 2000ms
+Accumulated time slice: 6010ms
+Thread ID: -1569024320
+
+Current process information after processing:
+Calling process PID: 19 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 38
+Dynamic Priority: 38
+Remaining execution time: 4910ms
+Time slice: 2040ms
+Accumulated time slice: 4090ms
+Thread ID: -1585809728
+
+Lowest priority value is at index 1
+Current process information:
+Calling process PID: 19 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 38
+Dynamic Priority: 38
+Remaining execution time: 4910ms
+Time slice: 2040ms
+Accumulated time slice: 4090ms
+Thread ID: -1585809728
+
+Current process information after processing:
+Calling process PID: 28 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 42
+Dynamic Priority: 42
+Remaining execution time: 15070ms
+Time slice: 1960ms
+Accumulated time slice: 3930ms
+Thread ID: -1594202432
+
+Lowest priority value is at index 1
+Current process information:
+Calling process PID: 28 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 42
+Dynamic Priority: 42
+Remaining execution time: 15070ms
+Time slice: 1960ms
+Accumulated time slice: 3930ms
+Thread ID: -1594202432
+
+Current process information after processing:
+Calling process PID: 1 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 40
+Dynamic Priority: 140
+Remaining execution time: 0ms
+Time slice: 2000ms
+Accumulated time slice: 7000ms
+Thread ID: -1569024320
+
+Lowest priority value is at index 0
+Current process information:
+Calling process PID: 0 from priority Queue 0
+Process Scheduling type: FIFO
+Static Priority: 61
+Dynamic Priority: 61
+Remaining execution time: 6000ms
+Time slice: 6000ms
+Accumulated time slice: 0ms
+Thread ID: -1569024320
+
+Current process information after processing:
+Calling process PID: 19 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 38
+Dynamic Priority: 38
+Remaining execution time: 2870ms
+Time slice: 2040ms
+Accumulated time slice: 6130ms
+Thread ID: -1585809728
+
+Lowest priority value is at index 1
+Current process information:
+Calling process PID: 19 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 38
+Dynamic Priority: 38
+Remaining execution time: 2870ms
+Time slice: 2040ms
+Accumulated time slice: 6130ms
+Thread ID: -1585809728
+
+Current process information after processing:
+Calling process PID: 28 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 42
+Dynamic Priority: 42
+Remaining execution time: 13110ms
+Time slice: 1960ms
+Accumulated time slice: 5890ms
+Thread ID: -1594202432
+
+Lowest priority value is at index 1
+Current process information:
+Calling process PID: 28 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 42
+Dynamic Priority: 42
+Remaining execution time: 13110ms
+Time slice: 1960ms
+Accumulated time slice: 5890ms
+Thread ID: -1594202432
+
+Current process information after processing:
+Calling process PID: 19 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 38
+Dynamic Priority: 38
+Remaining execution time: 830ms
+Time slice: 2040ms
+Accumulated time slice: 8170ms
+Thread ID: -1585809728
+
+Lowest priority value is at index 1
+Current process information:
+Calling process PID: 19 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 38
+Dynamic Priority: 38
+Remaining execution time: 830ms
+Time slice: 2040ms
+Accumulated time slice: 8170ms
+Thread ID: -1585809728
+
+Current process information after processing:
+Calling process PID: 28 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 42
+Dynamic Priority: 42
+Remaining execution time: 11150ms
+Time slice: 1960ms
+Accumulated time slice: 7850ms
+Thread ID: -1594202432
+
+Lowest priority value is at index 1
+Current process information:
+Calling process PID: 28 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 42
+Dynamic Priority: 42
+Remaining execution time: 11150ms
+Time slice: 1960ms
+Accumulated time slice: 7850ms
+Thread ID: -1594202432
+
+Current process information after processing:
+Calling process PID: 19 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 38
+Dynamic Priority: 140
+Remaining execution time: 0ms
+Time slice: 2040ms
+Accumulated time slice: 9000ms
+Thread ID: -1585809728
+
+Lowest priority value is at index 0
+Current process information:
+Calling process PID: 18 from priority Queue 0
+Process Scheduling type: FIFO
+Static Priority: 58
+Dynamic Priority: 58
+Remaining execution time: 7000ms
+Time slice: 7000ms
+Accumulated time slice: 0ms
+Thread ID: -1585809728
+
+Current process information after processing:
+Calling process PID: 28 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 42
+Dynamic Priority: 42
+Remaining execution time: 9190ms
+Time slice: 1960ms
+Accumulated time slice: 9810ms
+Thread ID: -1594202432
+
+Lowest priority value is at index 1
+Current process information:
+Calling process PID: 28 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 42
+Dynamic Priority: 42
+Remaining execution time: 9190ms
+Time slice: 1960ms
+Accumulated time slice: 9810ms
+Thread ID: -1594202432
+
+Current process information after processing:
+Calling process PID: 0 from priority Queue 0
+Process Scheduling type: FIFO
+Static Priority: 61
+Dynamic Priority: 140
+Remaining execution time: 0ms
+Time slice: 1580ms
+Accumulated time slice: 6000ms
+Thread ID: -1569024320
+
+Current process information:
+Calling process PID: 2 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 101
+Remaining execution time: 15000ms
+Time slice: 10ms
+Accumulated time slice: 0ms
+Thread ID: -1569024320
+
+Current process information after processing:
+Calling process PID: 2 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 100
+Remaining execution time: 14990ms
+Time slice: 780ms
+Accumulated time slice: 10ms
+Thread ID: -1569024320
+
+Current process information:
+Calling process PID: 2 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 100
+Remaining execution time: 14990ms
+Time slice: 780ms
+Accumulated time slice: 10ms
+Thread ID: -1569024320
+
+Current process information after processing:
+Calling process PID: 2 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 100
+Remaining execution time: 14210ms
+Time slice: 780ms
+Accumulated time slice: 790ms
+Thread ID: -1569024320
+
+Current process information:
+Calling process PID: 2 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 100
+Remaining execution time: 14210ms
+Time slice: 780ms
+Accumulated time slice: 790ms
+Thread ID: -1569024320
+
+Current process information after processing:
+Calling process PID: 2 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 104
+Remaining execution time: 13430ms
+Time slice: 780ms
+Accumulated time slice: 1570ms
+Thread ID: -1569024320
+
+Current process information:
+Calling process PID: 2 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 104
+Remaining execution time: 13430ms
+Time slice: 780ms
+Accumulated time slice: 1570ms
+Thread ID: -1569024320
+
+Current process information after processing:
+Calling process PID: 28 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 42
+Dynamic Priority: 42
+Remaining execution time: 7230ms
+Time slice: 1960ms
+Accumulated time slice: 11770ms
+Thread ID: -1594202432
+
+Lowest priority value is at index 1
+Current process information:
+Calling process PID: 28 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 42
+Dynamic Priority: 42
+Remaining execution time: 7230ms
+Time slice: 1960ms
+Accumulated time slice: 11770ms
+Thread ID: -1594202432
+
+Current process information after processing:
+Calling process PID: 2 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 107
+Remaining execution time: 12650ms
+Time slice: 780ms
+Accumulated time slice: 2350ms
+Thread ID: -1569024320
+
+Current process information:
+Calling process PID: 2 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 107
+Remaining execution time: 12650ms
+Time slice: 780ms
+Accumulated time slice: 2350ms
+Thread ID: -1569024320
+
+Current process information after processing:
+Calling process PID: 2 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 105
+Remaining execution time: 11870ms
+Time slice: 780ms
+Accumulated time slice: 3130ms
+Thread ID: -1569024320
+
+Current process information:
+Calling process PID: 2 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 105
+Remaining execution time: 11870ms
+Time slice: 780ms
+Accumulated time slice: 3130ms
+Thread ID: -1569024320
+
+Current process information after processing:
+Calling process PID: 28 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 42
+Dynamic Priority: 42
+Remaining execution time: 5270ms
+Time slice: 1960ms
+Accumulated time slice: 13730ms
+Thread ID: -1594202432
+
+Lowest priority value is at index 1
+Current process information:
+Calling process PID: 28 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 42
+Dynamic Priority: 42
+Remaining execution time: 5270ms
+Time slice: 1960ms
+Accumulated time slice: 13730ms
+Thread ID: -1594202432
+
+Current process information after processing:
+Calling process PID: 2 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 104
+Remaining execution time: 11090ms
+Time slice: 780ms
+Accumulated time slice: 3910ms
+Thread ID: -1569024320
+
+Current process information:
+Calling process PID: 2 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 104
+Remaining execution time: 11090ms
+Time slice: 780ms
+Accumulated time slice: 3910ms
+Thread ID: -1569024320
+
+Current process information after processing:
+Calling process PID: 9 from priority Queue 0
+Process Scheduling type: FIFO
+Static Priority: 38
+Dynamic Priority: 140
+Remaining execution time: 0ms
+Time slice: 2040ms
+Accumulated time slice: 16000ms
+Thread ID: -1577417024
+
+Lowest priority value is at index 1
+Current process information:
+Calling process PID: 10 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 47
+Dynamic Priority: 47
+Remaining execution time: 14000ms
+Time slice: 10ms
+Accumulated time slice: 0ms
+Thread ID: -1577417024
+
+Current process information after processing:
+Calling process PID: 10 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 47
+Dynamic Priority: 47
+Remaining execution time: 13990ms
+Time slice: 1860ms
+Accumulated time slice: 10ms
+Thread ID: -1577417024
+
+Lowest priority value is at index 1
+Current process information:
+Calling process PID: 10 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 47
+Dynamic Priority: 47
+Remaining execution time: 13990ms
+Time slice: 1860ms
+Accumulated time slice: 10ms
+Thread ID: -1577417024
+
+Current process information after processing:
+Calling process PID: 2 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 103
+Remaining execution time: 10310ms
+Time slice: 780ms
+Accumulated time slice: 4690ms
+Thread ID: -1569024320
+
+Current process information:
+Calling process PID: 2 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 103
+Remaining execution time: 10310ms
+Time slice: 780ms
+Accumulated time slice: 4690ms
+Thread ID: -1569024320
+
+Current process information after processing:
+Calling process PID: 18 from priority Queue 0
+Process Scheduling type: FIFO
+Static Priority: 58
+Dynamic Priority: 140
+Remaining execution time: 0ms
+Time slice: 1640ms
+Accumulated time slice: 7000ms
+Thread ID: -1585809728
+
+Current process information:
+Calling process PID: 20 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 101
+Remaining execution time: 7000ms
+Time slice: 10ms
+Accumulated time slice: 0ms
+Thread ID: -1585809728
+
+Current process information after processing:
+Calling process PID: 20 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 105
+Remaining execution time: 6990ms
+Time slice: 780ms
+Accumulated time slice: 10ms
+Thread ID: -1585809728
+
+Current process information:
+Calling process PID: 20 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 105
+Remaining execution time: 6990ms
+Time slice: 780ms
+Accumulated time slice: 10ms
+Thread ID: -1585809728
+
+Current process information after processing:
+Calling process PID: 2 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 104
+Remaining execution time: 9530ms
+Time slice: 780ms
+Accumulated time slice: 5470ms
+Thread ID: -1569024320
+
+Current process information:
+Calling process PID: 2 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 104
+Remaining execution time: 9530ms
+Time slice: 780ms
+Accumulated time slice: 5470ms
+Thread ID: -1569024320
+
+Current process information after processing:
+Calling process PID: 28 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 42
+Dynamic Priority: 42
+Remaining execution time: 3310ms
+Time slice: 1960ms
+Accumulated time slice: 15690ms
+Thread ID: -1594202432
+
+Lowest priority value is at index 1
+Current process information:
+Calling process PID: 28 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 42
+Dynamic Priority: 42
+Remaining execution time: 3310ms
+Time slice: 1960ms
+Accumulated time slice: 15690ms
+Thread ID: -1594202432
+
+Current process information after processing:
+Calling process PID: 20 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 102
+Remaining execution time: 6210ms
+Time slice: 780ms
+Accumulated time slice: 790ms
+Thread ID: -1585809728
+
+Current process information:
+Calling process PID: 20 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 102
+Remaining execution time: 6210ms
+Time slice: 780ms
+Accumulated time slice: 790ms
+Thread ID: -1585809728
+
+Current process information after processing:
+Calling process PID: 10 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 47
+Dynamic Priority: 47
+Remaining execution time: 12130ms
+Time slice: 1860ms
+Accumulated time slice: 1870ms
+Thread ID: -1577417024
+
+Lowest priority value is at index 1
+Current process information:
+Calling process PID: 10 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 47
+Dynamic Priority: 47
+Remaining execution time: 12130ms
+Time slice: 1860ms
+Accumulated time slice: 1870ms
+Thread ID: -1577417024
+
+Current process information after processing:
+Calling process PID: 2 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 103
+Remaining execution time: 8750ms
+Time slice: 780ms
+Accumulated time slice: 6250ms
+Thread ID: -1569024320
+
+Current process information:
+Calling process PID: 2 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 103
+Remaining execution time: 8750ms
+Time slice: 780ms
+Accumulated time slice: 6250ms
+Thread ID: -1569024320
+
+Current process information after processing:
+Calling process PID: 20 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 100
+Remaining execution time: 5430ms
+Time slice: 780ms
+Accumulated time slice: 1570ms
+Thread ID: -1585809728
+
+Current process information:
+Calling process PID: 20 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 100
+Remaining execution time: 5430ms
+Time slice: 780ms
+Accumulated time slice: 1570ms
+Thread ID: -1585809728
+
+Current process information after processing:
+Calling process PID: 2 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 100
+Remaining execution time: 7970ms
+Time slice: 780ms
+Accumulated time slice: 7030ms
+Thread ID: -1569024320
+
+Current process information:
+Calling process PID: 2 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 100
+Remaining execution time: 7970ms
+Time slice: 780ms
+Accumulated time slice: 7030ms
+Thread ID: -1569024320
+
+Current process information after processing:
+Calling process PID: 20 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 100
+Remaining execution time: 4650ms
+Time slice: 780ms
+Accumulated time slice: 2350ms
+Thread ID: -1585809728
+
+Current process information:
+Calling process PID: 20 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 100
+Remaining execution time: 4650ms
+Time slice: 780ms
+Accumulated time slice: 2350ms
+Thread ID: -1585809728
+
+Current process information after processing:
+Calling process PID: 28 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 42
+Dynamic Priority: 42
+Remaining execution time: 1350ms
+Time slice: 1960ms
+Accumulated time slice: 17650ms
+Thread ID: -1594202432
+
+Lowest priority value is at index 1
+Current process information:
+Calling process PID: 28 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 42
+Dynamic Priority: 42
+Remaining execution time: 1350ms
+Time slice: 1960ms
+Accumulated time slice: 17650ms
+Thread ID: -1594202432
+
+Current process information after processing:
+Calling process PID: 10 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 47
+Dynamic Priority: 47
+Remaining execution time: 10270ms
+Time slice: 1860ms
+Accumulated time slice: 3730ms
+Thread ID: -1577417024
+
+Lowest priority value is at index 1
+Current process information:
+Calling process PID: 10 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 47
+Dynamic Priority: 47
+Remaining execution time: 10270ms
+Time slice: 1860ms
+Accumulated time slice: 3730ms
+Thread ID: -1577417024
+
+Current process information after processing:
+Calling process PID: 2 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 103
+Remaining execution time: 7190ms
+Time slice: 780ms
+Accumulated time slice: 7810ms
+Thread ID: -1569024320
+
+Current process information:
+Calling process PID: 2 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 103
+Remaining execution time: 7190ms
+Time slice: 780ms
+Accumulated time slice: 7810ms
+Thread ID: -1569024320
+
+Current process information after processing:
+Calling process PID: 20 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 100
+Remaining execution time: 3870ms
+Time slice: 780ms
+Accumulated time slice: 3130ms
+Thread ID: -1585809728
+
+Current process information:
+Calling process PID: 20 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 100
+Remaining execution time: 3870ms
+Time slice: 780ms
+Accumulated time slice: 3130ms
+Thread ID: -1585809728
+
+Current process information after processing:
+Calling process PID: 2 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 105
+Remaining execution time: 6410ms
+Time slice: 780ms
+Accumulated time slice: 8590ms
+Thread ID: -1569024320
+
+Current process information:
+Calling process PID: 2 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 105
+Remaining execution time: 6410ms
+Time slice: 780ms
+Accumulated time slice: 8590ms
+Thread ID: -1569024320
+
+Current process information after processing:
+Calling process PID: 20 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 105
+Remaining execution time: 3090ms
+Time slice: 780ms
+Accumulated time slice: 3910ms
+Thread ID: -1585809728
+
+Current process information:
+Calling process PID: 20 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 105
+Remaining execution time: 3090ms
+Time slice: 780ms
+Accumulated time slice: 3910ms
+Thread ID: -1585809728
+
+Current process information after processing:
+Calling process PID: 28 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 42
+Dynamic Priority: 140
+Remaining execution time: 0ms
+Time slice: 1960ms
+Accumulated time slice: 19000ms
+Thread ID: -1594202432
+
+Lowest priority value is at index 0
+Current process information:
+Calling process PID: 27 from priority Queue 0
+Process Scheduling type: FIFO
+Static Priority: 44
+Dynamic Priority: 44
+Remaining execution time: 13000ms
+Time slice: 13000ms
+Accumulated time slice: 0ms
+Thread ID: -1594202432
+
+Current process information after processing:
+Calling process PID: 2 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 105
+Remaining execution time: 5630ms
+Time slice: 780ms
+Accumulated time slice: 9370ms
+Thread ID: -1569024320
+
+Current process information:
+Calling process PID: 2 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 105
+Remaining execution time: 5630ms
+Time slice: 780ms
+Accumulated time slice: 9370ms
+Thread ID: -1569024320
+
+Current process information after processing:
+Calling process PID: 10 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 47
+Dynamic Priority: 47
+Remaining execution time: 8410ms
+Time slice: 1860ms
+Accumulated time slice: 5590ms
+Thread ID: -1577417024
+
+Lowest priority value is at index 1
+Current process information:
+Calling process PID: 10 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 47
+Dynamic Priority: 47
+Remaining execution time: 8410ms
+Time slice: 1860ms
+Accumulated time slice: 5590ms
+Thread ID: -1577417024
+
+Current process information after processing:
+Calling process PID: 20 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 108
+Remaining execution time: 2310ms
+Time slice: 780ms
+Accumulated time slice: 4690ms
+Thread ID: -1585809728
+
+Current process information:
+Calling process PID: 20 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 108
+Remaining execution time: 2310ms
+Time slice: 780ms
+Accumulated time slice: 4690ms
+Thread ID: -1585809728
+
+Current process information after processing:
+Calling process PID: 2 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 109
+Remaining execution time: 4850ms
+Time slice: 780ms
+Accumulated time slice: 10150ms
+Thread ID: -1569024320
+
+Current process information:
+Calling process PID: 2 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 109
+Remaining execution time: 4850ms
+Time slice: 780ms
+Accumulated time slice: 10150ms
+Thread ID: -1569024320
+
+Current process information after processing:
+Calling process PID: 20 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 107
+Remaining execution time: 1530ms
+Time slice: 780ms
+Accumulated time slice: 5470ms
+Thread ID: -1585809728
+
+Current process information:
+Calling process PID: 20 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 107
+Remaining execution time: 1530ms
+Time slice: 780ms
+Accumulated time slice: 5470ms
+Thread ID: -1585809728
+
+Current process information after processing:
+Calling process PID: 2 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 114
+Remaining execution time: 4070ms
+Time slice: 780ms
+Accumulated time slice: 10930ms
+Thread ID: -1569024320
+
+Current process information:
+Calling process PID: 2 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 114
+Remaining execution time: 4070ms
+Time slice: 780ms
+Accumulated time slice: 10930ms
+Thread ID: -1569024320
+
+Current process information after processing:
+Calling process PID: 20 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 108
+Remaining execution time: 750ms
+Time slice: 780ms
+Accumulated time slice: 6250ms
+Thread ID: -1585809728
+
+Current process information:
+Calling process PID: 20 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 108
+Remaining execution time: 750ms
+Time slice: 780ms
+Accumulated time slice: 6250ms
+Thread ID: -1585809728
+
+Current process information after processing:
+Calling process PID: 10 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 47
+Dynamic Priority: 47
+Remaining execution time: 6550ms
+Time slice: 1860ms
+Accumulated time slice: 7450ms
+Thread ID: -1577417024
+
+Lowest priority value is at index 1
+Current process information:
+Calling process PID: 10 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 47
+Dynamic Priority: 47
+Remaining execution time: 6550ms
+Time slice: 1860ms
+Accumulated time slice: 7450ms
+Thread ID: -1577417024
+
+Current process information after processing:
+Calling process PID: 2 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 111
+Remaining execution time: 3290ms
+Time slice: 780ms
+Accumulated time slice: 11710ms
+Thread ID: -1569024320
+
+Current process information:
+Calling process PID: 2 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 111
+Remaining execution time: 3290ms
+Time slice: 780ms
+Accumulated time slice: 11710ms
+Thread ID: -1569024320
+
+Current process information after processing:
+Calling process PID: 20 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 139
+Remaining execution time: 0ms
+Time slice: 5ms
+Accumulated time slice: 7000ms
+Thread ID: -1585809728
+
+Current process information:
+Calling process PID: 20 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 139
+Remaining execution time: 0ms
+Time slice: 5ms
+Accumulated time slice: 7000ms
+Thread ID: -1585809728
+
+Current process information after processing:
+Calling process PID: 20 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 139
+Remaining execution time: 0ms
+Time slice: 5ms
+Accumulated time slice: 7000ms
+Thread ID: -1585809728
+
+Current process information:
+Calling process PID: 20 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 139
+Remaining execution time: 0ms
+Time slice: 5ms
+Accumulated time slice: 7000ms
+Thread ID: -1585809728
+
+Current process information after processing:
+Calling process PID: 20 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 139
+Remaining execution time: 0ms
+Time slice: 5ms
+Accumulated time slice: 7000ms
+Thread ID: -1585809728
+
+Current process information:
+Calling process PID: 20 from priority Queue 2
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 139
+Remaining execution time: 0ms
+Time slice: 5ms
+Accumulated time slice: 7000ms
+Thread ID: -1585809728
+
+Current process information after processing:
+Calling process PID: 20 from priority Queue 2
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 137
+Remaining execution time: 0ms
+Time slice: 15ms
+Accumulated time slice: 7000ms
+Thread ID: -1585809728
+
+Current process information:
+Calling process PID: 20 from priority Queue 2
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 137
+Remaining execution time: 0ms
+Time slice: 15ms
+Accumulated time slice: 7000ms
+Thread ID: -1585809728
+
+Current process information after processing:
+Calling process PID: 20 from priority Queue 2
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 138
+Remaining execution time: 0ms
+Time slice: 10ms
+Accumulated time slice: 7000ms
+Thread ID: -1585809728
+
+Current process information:
+Calling process PID: 20 from priority Queue 2
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 138
+Remaining execution time: 0ms
+Time slice: 10ms
+Accumulated time slice: 7000ms
+Thread ID: -1585809728
+
+Current process information after processing:
+Calling process PID: 20 from priority Queue 2
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 139
+Remaining execution time: 0ms
+Time slice: 5ms
+Accumulated time slice: 7000ms
+Thread ID: -1585809728
+
+Threads that have finished: 1
+Total processes finished so far: 12
+
+Current process information after processing:
+Calling process PID: 2 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 115
+Remaining execution time: 2510ms
+Time slice: 780ms
+Accumulated time slice: 12490ms
+Thread ID: -1569024320
+
+Current process information:
+Calling process PID: 2 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 115
+Remaining execution time: 2510ms
+Time slice: 780ms
+Accumulated time slice: 12490ms
+Thread ID: -1569024320
+
+Current process information after processing:
+Calling process PID: 2 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 116
+Remaining execution time: 1730ms
+Time slice: 780ms
+Accumulated time slice: 13270ms
+Thread ID: -1569024320
+
+Current process information:
+Calling process PID: 2 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 116
+Remaining execution time: 1730ms
+Time slice: 780ms
+Accumulated time slice: 13270ms
+Thread ID: -1569024320
+
+Current process information after processing:
+Calling process PID: 10 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 47
+Dynamic Priority: 47
+Remaining execution time: 4690ms
+Time slice: 1860ms
+Accumulated time slice: 9310ms
+Thread ID: -1577417024
+
+Lowest priority value is at index 1
+Current process information:
+Calling process PID: 10 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 47
+Dynamic Priority: 47
+Remaining execution time: 4690ms
+Time slice: 1860ms
+Accumulated time slice: 9310ms
+Thread ID: -1577417024
+
+Current process information after processing:
+Calling process PID: 2 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 117
+Remaining execution time: 950ms
+Time slice: 780ms
+Accumulated time slice: 14050ms
+Thread ID: -1569024320
+
+Current process information:
+Calling process PID: 2 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 117
+Remaining execution time: 950ms
+Time slice: 780ms
+Accumulated time slice: 14050ms
+Thread ID: -1569024320
+
+Current process information after processing:
+Calling process PID: 2 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 119
+Remaining execution time: 170ms
+Time slice: 780ms
+Accumulated time slice: 14830ms
+Thread ID: -1569024320
+
+Current process information:
+Calling process PID: 2 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 119
+Remaining execution time: 170ms
+Time slice: 780ms
+Accumulated time slice: 14830ms
+Thread ID: -1569024320
+
+Current process information after processing:
+Calling process PID: 2 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 139
+Remaining execution time: 0ms
+Time slice: 5ms
+Accumulated time slice: 15000ms
+Thread ID: -1569024320
+
+Current process information:
+Calling process PID: 2 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 139
+Remaining execution time: 0ms
+Time slice: 5ms
+Accumulated time slice: 15000ms
+Thread ID: -1569024320
+
+Current process information after processing:
+Calling process PID: 2 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 136
+Remaining execution time: 0ms
+Time slice: 20ms
+Accumulated time slice: 15000ms
+Thread ID: -1569024320
+
+Current process information:
+Calling process PID: 2 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 136
+Remaining execution time: 0ms
+Time slice: 20ms
+Accumulated time slice: 15000ms
+Thread ID: -1569024320
+
+Current process information after processing:
+Calling process PID: 2 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 138
+Remaining execution time: 0ms
+Time slice: 10ms
+Accumulated time slice: 15000ms
+Thread ID: -1569024320
+
+Current process information:
+Calling process PID: 2 from priority Queue 2
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 136
+Remaining execution time: 0ms
+Time slice: 20ms
+Accumulated time slice: 15000ms
+Thread ID: -1569024320
+
+Current process information after processing:
+Calling process PID: 2 from priority Queue 2
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 139
+Remaining execution time: 0ms
+Time slice: 5ms
+Accumulated time slice: 15000ms
+Thread ID: -1569024320
+
+Current process information:
+Calling process PID: 2 from priority Queue 2
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 139
+Remaining execution time: 0ms
+Time slice: 5ms
+Accumulated time slice: 15000ms
+Thread ID: -1569024320
+
+Current process information after processing:
+Calling process PID: 2 from priority Queue 2
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 139
+Remaining execution time: 0ms
+Time slice: 5ms
+Accumulated time slice: 15000ms
+Thread ID: -1569024320
+
+Current process information:
+Calling process PID: 2 from priority Queue 2
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 139
+Remaining execution time: 0ms
+Time slice: 5ms
+Accumulated time slice: 15000ms
+Thread ID: -1569024320
+
+Current process information after processing:
+Calling process PID: 2 from priority Queue 2
+Process Scheduling type: NORMAL
+Static Priority: 101
+Dynamic Priority: 139
+Remaining execution time: 0ms
+Time slice: 5ms
+Accumulated time slice: 15000ms
+Thread ID: -1569024320
+
+Threads that have finished: 2
+Total processes finished so far: 18
+
+Current process information after processing:
+Calling process PID: 10 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 47
+Dynamic Priority: 47
+Remaining execution time: 2830ms
+Time slice: 1860ms
+Accumulated time slice: 11170ms
+Thread ID: -1577417024
+
+Lowest priority value is at index 1
+Current process information:
+Calling process PID: 10 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 47
+Dynamic Priority: 47
+Remaining execution time: 2830ms
+Time slice: 1860ms
+Accumulated time slice: 11170ms
+Thread ID: -1577417024
+
+Current process information after processing:
+Calling process PID: 10 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 47
+Dynamic Priority: 47
+Remaining execution time: 970ms
+Time slice: 1860ms
+Accumulated time slice: 13030ms
+Thread ID: -1577417024
+
+Lowest priority value is at index 1
+Current process information:
+Calling process PID: 10 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 47
+Dynamic Priority: 47
+Remaining execution time: 970ms
+Time slice: 1860ms
+Accumulated time slice: 13030ms
+Thread ID: -1577417024
+
+Current process information after processing:
+Calling process PID: 10 from priority Queue 0
+Process Scheduling type: RR
+Static Priority: 47
+Dynamic Priority: 140
+Remaining execution time: 0ms
+Time slice: 1860ms
+Accumulated time slice: 14000ms
+Thread ID: -1577417024
+
+Current process information:
+Calling process PID: 12 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 102
+Dynamic Priority: 102
+Remaining execution time: 15000ms
+Time slice: 10ms
+Accumulated time slice: 0ms
+Thread ID: -1577417024
+
+Current process information after processing:
+Calling process PID: 12 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 102
+Dynamic Priority: 101
+Remaining execution time: 14990ms
+Time slice: 760ms
+Accumulated time slice: 10ms
+Thread ID: -1577417024
+
+Current process information:
+Calling process PID: 12 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 102
+Dynamic Priority: 101
+Remaining execution time: 14990ms
+Time slice: 760ms
+Accumulated time slice: 10ms
+Thread ID: -1577417024
+
+Current process information after processing:
+Calling process PID: 12 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 102
+Dynamic Priority: 100
+Remaining execution time: 14230ms
+Time slice: 760ms
+Accumulated time slice: 770ms
+Thread ID: -1577417024
+
+Current process information:
+Calling process PID: 12 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 102
+Dynamic Priority: 100
+Remaining execution time: 14230ms
+Time slice: 760ms
+Accumulated time slice: 770ms
+Thread ID: -1577417024
+
+Current process information after processing:
+Calling process PID: 12 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 102
+Dynamic Priority: 100
+Remaining execution time: 13470ms
+Time slice: 760ms
+Accumulated time slice: 1530ms
+Thread ID: -1577417024
+
+Current process information:
+Calling process PID: 12 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 102
+Dynamic Priority: 100
+Remaining execution time: 13470ms
+Time slice: 760ms
+Accumulated time slice: 1530ms
+Thread ID: -1577417024
+
+Current process information after processing:
+Calling process PID: 12 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 102
+Dynamic Priority: 102
+Remaining execution time: 12710ms
+Time slice: 760ms
+Accumulated time slice: 2290ms
+Thread ID: -1577417024
+
+Current process information:
+Calling process PID: 12 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 102
+Dynamic Priority: 102
+Remaining execution time: 12710ms
+Time slice: 760ms
+Accumulated time slice: 2290ms
+Thread ID: -1577417024
+
+Current process information after processing:
+Calling process PID: 12 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 102
+Dynamic Priority: 100
+Remaining execution time: 11950ms
+Time slice: 760ms
+Accumulated time slice: 3050ms
+Thread ID: -1577417024
+
+Current process information:
+Calling process PID: 12 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 102
+Dynamic Priority: 100
+Remaining execution time: 11950ms
+Time slice: 760ms
+Accumulated time slice: 3050ms
+Thread ID: -1577417024
+
+Current process information after processing:
+Calling process PID: 12 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 102
+Dynamic Priority: 100
+Remaining execution time: 11190ms
+Time slice: 760ms
+Accumulated time slice: 3810ms
+Thread ID: -1577417024
+
+Current process information:
+Calling process PID: 12 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 102
+Dynamic Priority: 100
+Remaining execution time: 11190ms
+Time slice: 760ms
+Accumulated time slice: 3810ms
+Thread ID: -1577417024
+
+Current process information after processing:
+Calling process PID: 27 from priority Queue 0
+Process Scheduling type: FIFO
+Static Priority: 44
+Dynamic Priority: 140
+Remaining execution time: 0ms
+Time slice: 1920ms
+Accumulated time slice: 13000ms
+Thread ID: -1594202432
+
+Current process information:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 103
+Remaining execution time: 15000ms
+Time slice: 10ms
+Accumulated time slice: 0ms
+Thread ID: -1594202432
+
+Current process information after processing:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 104
+Remaining execution time: 14990ms
+Time slice: 740ms
+Accumulated time slice: 10ms
+Thread ID: -1594202432
+
+Current process information:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 104
+Remaining execution time: 14990ms
+Time slice: 740ms
+Accumulated time slice: 10ms
+Thread ID: -1594202432
+
+Current process information after processing:
+Calling process PID: 12 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 102
+Dynamic Priority: 100
+Remaining execution time: 10430ms
+Time slice: 760ms
+Accumulated time slice: 4570ms
+Thread ID: -1577417024
+
+Current process information:
+Calling process PID: 12 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 102
+Dynamic Priority: 100
+Remaining execution time: 10430ms
+Time slice: 760ms
+Accumulated time slice: 4570ms
+Thread ID: -1577417024
+
+Current process information after processing:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 109
+Remaining execution time: 14250ms
+Time slice: 740ms
+Accumulated time slice: 750ms
+Thread ID: -1594202432
+
+Current process information:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 109
+Remaining execution time: 14250ms
+Time slice: 740ms
+Accumulated time slice: 750ms
+Thread ID: -1594202432
+
+Current process information after processing:
+Calling process PID: 12 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 102
+Dynamic Priority: 100
+Remaining execution time: 9670ms
+Time slice: 760ms
+Accumulated time slice: 5330ms
+Thread ID: -1577417024
+
+Current process information:
+Calling process PID: 12 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 102
+Dynamic Priority: 100
+Remaining execution time: 9670ms
+Time slice: 760ms
+Accumulated time slice: 5330ms
+Thread ID: -1577417024
+
+Current process information after processing:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 107
+Remaining execution time: 13510ms
+Time slice: 740ms
+Accumulated time slice: 1490ms
+Thread ID: -1594202432
+
+Current process information:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 107
+Remaining execution time: 13510ms
+Time slice: 740ms
+Accumulated time slice: 1490ms
+Thread ID: -1594202432
+
+Current process information after processing:
+Calling process PID: 12 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 102
+Dynamic Priority: 100
+Remaining execution time: 8910ms
+Time slice: 760ms
+Accumulated time slice: 6090ms
+Thread ID: -1577417024
+
+Current process information:
+Calling process PID: 12 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 102
+Dynamic Priority: 100
+Remaining execution time: 8910ms
+Time slice: 760ms
+Accumulated time slice: 6090ms
+Thread ID: -1577417024
+
+Current process information after processing:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 108
+Remaining execution time: 12770ms
+Time slice: 740ms
+Accumulated time slice: 2230ms
+Thread ID: -1594202432
+
+Current process information:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 108
+Remaining execution time: 12770ms
+Time slice: 740ms
+Accumulated time slice: 2230ms
+Thread ID: -1594202432
+
+Current process information after processing:
+Calling process PID: 12 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 102
+Dynamic Priority: 105
+Remaining execution time: 8150ms
+Time slice: 760ms
+Accumulated time slice: 6850ms
+Thread ID: -1577417024
+
+Current process information:
+Calling process PID: 12 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 102
+Dynamic Priority: 105
+Remaining execution time: 8150ms
+Time slice: 760ms
+Accumulated time slice: 6850ms
+Thread ID: -1577417024
+
+Current process information after processing:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 112
+Remaining execution time: 12030ms
+Time slice: 740ms
+Accumulated time slice: 2970ms
+Thread ID: -1594202432
+
+Current process information:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 112
+Remaining execution time: 12030ms
+Time slice: 740ms
+Accumulated time slice: 2970ms
+Thread ID: -1594202432
+
+Current process information after processing:
+Calling process PID: 12 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 102
+Dynamic Priority: 101
+Remaining execution time: 7390ms
+Time slice: 760ms
+Accumulated time slice: 7610ms
+Thread ID: -1577417024
+
+Current process information:
+Calling process PID: 12 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 102
+Dynamic Priority: 101
+Remaining execution time: 7390ms
+Time slice: 760ms
+Accumulated time slice: 7610ms
+Thread ID: -1577417024
+
+Current process information after processing:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 112
+Remaining execution time: 11290ms
+Time slice: 740ms
+Accumulated time slice: 3710ms
+Thread ID: -1594202432
+
+Current process information:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 112
+Remaining execution time: 11290ms
+Time slice: 740ms
+Accumulated time slice: 3710ms
+Thread ID: -1594202432
+
+Current process information after processing:
+Calling process PID: 12 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 102
+Dynamic Priority: 102
+Remaining execution time: 6630ms
+Time slice: 760ms
+Accumulated time slice: 8370ms
+Thread ID: -1577417024
+
+Current process information:
+Calling process PID: 12 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 102
+Dynamic Priority: 102
+Remaining execution time: 6630ms
+Time slice: 760ms
+Accumulated time slice: 8370ms
+Thread ID: -1577417024
+
+Current process information after processing:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 113
+Remaining execution time: 10550ms
+Time slice: 740ms
+Accumulated time slice: 4450ms
+Thread ID: -1594202432
+
+Current process information:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 113
+Remaining execution time: 10550ms
+Time slice: 740ms
+Accumulated time slice: 4450ms
+Thread ID: -1594202432
+
+Current process information after processing:
+Calling process PID: 12 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 102
+Dynamic Priority: 100
+Remaining execution time: 5870ms
+Time slice: 760ms
+Accumulated time slice: 9130ms
+Thread ID: -1577417024
+
+Current process information:
+Calling process PID: 12 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 102
+Dynamic Priority: 100
+Remaining execution time: 5870ms
+Time slice: 760ms
+Accumulated time slice: 9130ms
+Thread ID: -1577417024
+
+Current process information after processing:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 111
+Remaining execution time: 9810ms
+Time slice: 740ms
+Accumulated time slice: 5190ms
+Thread ID: -1594202432
+
+Current process information:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 111
+Remaining execution time: 9810ms
+Time slice: 740ms
+Accumulated time slice: 5190ms
+Thread ID: -1594202432
+
+Current process information after processing:
+Calling process PID: 12 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 102
+Dynamic Priority: 100
+Remaining execution time: 5110ms
+Time slice: 760ms
+Accumulated time slice: 9890ms
+Thread ID: -1577417024
+
+Current process information:
+Calling process PID: 12 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 102
+Dynamic Priority: 100
+Remaining execution time: 5110ms
+Time slice: 760ms
+Accumulated time slice: 9890ms
+Thread ID: -1577417024
+
+Current process information after processing:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 112
+Remaining execution time: 9070ms
+Time slice: 740ms
+Accumulated time slice: 5930ms
+Thread ID: -1594202432
+
+Current process information:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 112
+Remaining execution time: 9070ms
+Time slice: 740ms
+Accumulated time slice: 5930ms
+Thread ID: -1594202432
+
+Current process information after processing:
+Calling process PID: 12 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 102
+Dynamic Priority: 100
+Remaining execution time: 4350ms
+Time slice: 760ms
+Accumulated time slice: 10650ms
+Thread ID: -1577417024
+
+Current process information:
+Calling process PID: 12 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 102
+Dynamic Priority: 100
+Remaining execution time: 4350ms
+Time slice: 760ms
+Accumulated time slice: 10650ms
+Thread ID: -1577417024
+
+Current process information after processing:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 110
+Remaining execution time: 8330ms
+Time slice: 740ms
+Accumulated time slice: 6670ms
+Thread ID: -1594202432
+
+Current process information:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 110
+Remaining execution time: 8330ms
+Time slice: 740ms
+Accumulated time slice: 6670ms
+Thread ID: -1594202432
+
+Current process information after processing:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 113
+Remaining execution time: 7590ms
+Time slice: 740ms
+Accumulated time slice: 7410ms
+Thread ID: -1594202432
+
+Current process information:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 113
+Remaining execution time: 7590ms
+Time slice: 740ms
+Accumulated time slice: 7410ms
+Thread ID: -1594202432
+
+Current process information after processing:
+Calling process PID: 12 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 102
+Dynamic Priority: 100
+Remaining execution time: 3590ms
+Time slice: 760ms
+Accumulated time slice: 11410ms
+Thread ID: -1577417024
+
+Current process information:
+Calling process PID: 12 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 102
+Dynamic Priority: 100
+Remaining execution time: 3590ms
+Time slice: 760ms
+Accumulated time slice: 11410ms
+Thread ID: -1577417024
+
+Current process information after processing:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 115
+Remaining execution time: 6850ms
+Time slice: 740ms
+Accumulated time slice: 8150ms
+Thread ID: -1594202432
+
+Current process information:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 115
+Remaining execution time: 6850ms
+Time slice: 740ms
+Accumulated time slice: 8150ms
+Thread ID: -1594202432
+
+Current process information after processing:
+Calling process PID: 12 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 102
+Dynamic Priority: 103
+Remaining execution time: 2830ms
+Time slice: 760ms
+Accumulated time slice: 12170ms
+Thread ID: -1577417024
+
+Current process information:
+Calling process PID: 12 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 102
+Dynamic Priority: 103
+Remaining execution time: 2830ms
+Time slice: 760ms
+Accumulated time slice: 12170ms
+Thread ID: -1577417024
+
+Current process information after processing:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 112
+Remaining execution time: 6110ms
+Time slice: 740ms
+Accumulated time slice: 8890ms
+Thread ID: -1594202432
+
+Current process information:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 112
+Remaining execution time: 6110ms
+Time slice: 740ms
+Accumulated time slice: 8890ms
+Thread ID: -1594202432
+
+Current process information after processing:
+Calling process PID: 12 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 102
+Dynamic Priority: 102
+Remaining execution time: 2070ms
+Time slice: 760ms
+Accumulated time slice: 12930ms
+Thread ID: -1577417024
+
+Current process information:
+Calling process PID: 12 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 102
+Dynamic Priority: 102
+Remaining execution time: 2070ms
+Time slice: 760ms
+Accumulated time slice: 12930ms
+Thread ID: -1577417024
+
+Current process information after processing:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 110
+Remaining execution time: 5370ms
+Time slice: 740ms
+Accumulated time slice: 9630ms
+Thread ID: -1594202432
+
+Current process information:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 110
+Remaining execution time: 5370ms
+Time slice: 740ms
+Accumulated time slice: 9630ms
+Thread ID: -1594202432
+
+Current process information after processing:
+Calling process PID: 12 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 102
+Dynamic Priority: 103
+Remaining execution time: 1310ms
+Time slice: 760ms
+Accumulated time slice: 13690ms
+Thread ID: -1577417024
+
+Current process information:
+Calling process PID: 12 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 102
+Dynamic Priority: 103
+Remaining execution time: 1310ms
+Time slice: 760ms
+Accumulated time slice: 13690ms
+Thread ID: -1577417024
+
+Current process information after processing:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 111
+Remaining execution time: 4630ms
+Time slice: 740ms
+Accumulated time slice: 10370ms
+Thread ID: -1594202432
+
+Current process information:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 111
+Remaining execution time: 4630ms
+Time slice: 740ms
+Accumulated time slice: 10370ms
+Thread ID: -1594202432
+
+Current process information after processing:
+Calling process PID: 12 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 102
+Dynamic Priority: 100
+Remaining execution time: 550ms
+Time slice: 760ms
+Accumulated time slice: 14450ms
+Thread ID: -1577417024
+
+Current process information:
+Calling process PID: 12 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 102
+Dynamic Priority: 100
+Remaining execution time: 550ms
+Time slice: 760ms
+Accumulated time slice: 14450ms
+Thread ID: -1577417024
+
+Current process information after processing:
+Calling process PID: 12 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 102
+Dynamic Priority: 139
+Remaining execution time: 0ms
+Time slice: 5ms
+Accumulated time slice: 15000ms
+Thread ID: -1577417024
+
+Current process information:
+Calling process PID: 12 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 102
+Dynamic Priority: 139
+Remaining execution time: 0ms
+Time slice: 5ms
+Accumulated time slice: 15000ms
+Thread ID: -1577417024
+
+Current process information after processing:
+Calling process PID: 12 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 102
+Dynamic Priority: 137
+Remaining execution time: 0ms
+Time slice: 15ms
+Accumulated time slice: 15000ms
+Thread ID: -1577417024
+
+Current process information:
+Calling process PID: 12 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 102
+Dynamic Priority: 137
+Remaining execution time: 0ms
+Time slice: 15ms
+Accumulated time slice: 15000ms
+Thread ID: -1577417024
+
+Current process information after processing:
+Calling process PID: 12 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 102
+Dynamic Priority: 139
+Remaining execution time: 0ms
+Time slice: 5ms
+Accumulated time slice: 15000ms
+Thread ID: -1577417024
+
+Current process information:
+Calling process PID: 12 from priority Queue 2
+Process Scheduling type: NORMAL
+Static Priority: 102
+Dynamic Priority: 139
+Remaining execution time: 0ms
+Time slice: 5ms
+Accumulated time slice: 15000ms
+Thread ID: -1577417024
+
+Current process information after processing:
+Calling process PID: 12 from priority Queue 2
+Process Scheduling type: NORMAL
+Static Priority: 102
+Dynamic Priority: 136
+Remaining execution time: 0ms
+Time slice: 20ms
+Accumulated time slice: 15000ms
+Thread ID: -1577417024
+
+Current process information:
+Calling process PID: 12 from priority Queue 2
+Process Scheduling type: NORMAL
+Static Priority: 102
+Dynamic Priority: 136
+Remaining execution time: 0ms
+Time slice: 20ms
+Accumulated time slice: 15000ms
+Thread ID: -1577417024
+
+Current process information after processing:
+Calling process PID: 12 from priority Queue 2
+Process Scheduling type: NORMAL
+Static Priority: 102
+Dynamic Priority: 137
+Remaining execution time: 0ms
+Time slice: 15ms
+Accumulated time slice: 15000ms
+Thread ID: -1577417024
+
+Current process information:
+Calling process PID: 12 from priority Queue 2
+Process Scheduling type: NORMAL
+Static Priority: 102
+Dynamic Priority: 137
+Remaining execution time: 0ms
+Time slice: 15ms
+Accumulated time slice: 15000ms
+Thread ID: -1577417024
+
+Current process information after processing:
+Calling process PID: 12 from priority Queue 2
+Process Scheduling type: NORMAL
+Static Priority: 102
+Dynamic Priority: 138
+Remaining execution time: 0ms
+Time slice: 10ms
+Accumulated time slice: 15000ms
+Thread ID: -1577417024
+
+Threads that have finished: 3
+Total processes finished so far: 26
+
+Current process information after processing:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 111
+Remaining execution time: 3890ms
+Time slice: 740ms
+Accumulated time slice: 11110ms
+Thread ID: -1594202432
+
+Current process information:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 111
+Remaining execution time: 3890ms
+Time slice: 740ms
+Accumulated time slice: 11110ms
+Thread ID: -1594202432
+
+Current process information after processing:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 115
+Remaining execution time: 3150ms
+Time slice: 740ms
+Accumulated time slice: 11850ms
+Thread ID: -1594202432
+
+Current process information:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 115
+Remaining execution time: 3150ms
+Time slice: 740ms
+Accumulated time slice: 11850ms
+Thread ID: -1594202432
+
+Current process information after processing:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 120
+Remaining execution time: 2410ms
+Time slice: 100ms
+Accumulated time slice: 12590ms
+Thread ID: -1594202432
+
+Current process information:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 120
+Remaining execution time: 2410ms
+Time slice: 100ms
+Accumulated time slice: 12590ms
+Thread ID: -1594202432
+
+Current process information after processing:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 120
+Remaining execution time: 2310ms
+Time slice: 100ms
+Accumulated time slice: 12690ms
+Thread ID: -1594202432
+
+Current process information:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 120
+Remaining execution time: 2310ms
+Time slice: 100ms
+Accumulated time slice: 12690ms
+Thread ID: -1594202432
+
+Current process information after processing:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 122
+Remaining execution time: 2210ms
+Time slice: 90ms
+Accumulated time slice: 12790ms
+Thread ID: -1594202432
+
+Current process information:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 122
+Remaining execution time: 2210ms
+Time slice: 90ms
+Accumulated time slice: 12790ms
+Thread ID: -1594202432
+
+Current process information after processing:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 120
+Remaining execution time: 2120ms
+Time slice: 100ms
+Accumulated time slice: 12880ms
+Thread ID: -1594202432
+
+Current process information:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 120
+Remaining execution time: 2120ms
+Time slice: 100ms
+Accumulated time slice: 12880ms
+Thread ID: -1594202432
+
+Current process information after processing:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 117
+Remaining execution time: 2020ms
+Time slice: 740ms
+Accumulated time slice: 12980ms
+Thread ID: -1594202432
+
+Current process information:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 117
+Remaining execution time: 2020ms
+Time slice: 740ms
+Accumulated time slice: 12980ms
+Thread ID: -1594202432
+
+Current process information after processing:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 117
+Remaining execution time: 1280ms
+Time slice: 740ms
+Accumulated time slice: 13720ms
+Thread ID: -1594202432
+
+Current process information:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 117
+Remaining execution time: 1280ms
+Time slice: 740ms
+Accumulated time slice: 13720ms
+Thread ID: -1594202432
+
+Current process information after processing:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 122
+Remaining execution time: 540ms
+Time slice: 90ms
+Accumulated time slice: 14460ms
+Thread ID: -1594202432
+
+Current process information:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 122
+Remaining execution time: 540ms
+Time slice: 90ms
+Accumulated time slice: 14460ms
+Thread ID: -1594202432
+
+Current process information after processing:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 121
+Remaining execution time: 450ms
+Time slice: 95ms
+Accumulated time slice: 14550ms
+Thread ID: -1594202432
+
+Current process information:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 121
+Remaining execution time: 450ms
+Time slice: 95ms
+Accumulated time slice: 14550ms
+Thread ID: -1594202432
+
+Current process information after processing:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 124
+Remaining execution time: 355ms
+Time slice: 80ms
+Accumulated time slice: 14645ms
+Thread ID: -1594202432
+
+Current process information:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 124
+Remaining execution time: 355ms
+Time slice: 80ms
+Accumulated time slice: 14645ms
+Thread ID: -1594202432
+
+Current process information after processing:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 125
+Remaining execution time: 275ms
+Time slice: 75ms
+Accumulated time slice: 14725ms
+Thread ID: -1594202432
+
+Current process information:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 125
+Remaining execution time: 275ms
+Time slice: 75ms
+Accumulated time slice: 14725ms
+Thread ID: -1594202432
+
+Current process information after processing:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 120
+Remaining execution time: 200ms
+Time slice: 100ms
+Accumulated time slice: 14800ms
+Thread ID: -1594202432
+
+Current process information:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 120
+Remaining execution time: 200ms
+Time slice: 100ms
+Accumulated time slice: 14800ms
+Thread ID: -1594202432
+
+Current process information after processing:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 124
+Remaining execution time: 100ms
+Time slice: 80ms
+Accumulated time slice: 14900ms
+Thread ID: -1594202432
+
+Current process information:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 124
+Remaining execution time: 100ms
+Time slice: 80ms
+Accumulated time slice: 14900ms
+Thread ID: -1594202432
+
+Current process information after processing:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 129
+Remaining execution time: 20ms
+Time slice: 55ms
+Accumulated time slice: 14980ms
+Thread ID: -1594202432
+
+Current process information:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 129
+Remaining execution time: 20ms
+Time slice: 55ms
+Accumulated time slice: 14980ms
+Thread ID: -1594202432
+
+Current process information after processing:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 139
+Remaining execution time: 0ms
+Time slice: 5ms
+Accumulated time slice: 15000ms
+Thread ID: -1594202432
+
+Current process information:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 139
+Remaining execution time: 0ms
+Time slice: 5ms
+Accumulated time slice: 15000ms
+Thread ID: -1594202432
+
+Current process information after processing:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 138
+Remaining execution time: 0ms
+Time slice: 10ms
+Accumulated time slice: 15000ms
+Thread ID: -1594202432
+
+Current process information:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 138
+Remaining execution time: 0ms
+Time slice: 10ms
+Accumulated time slice: 15000ms
+Thread ID: -1594202432
+
+Current process information after processing:
+Calling process PID: 29 from priority Queue 1
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 139
+Remaining execution time: 0ms
+Time slice: 5ms
+Accumulated time slice: 15000ms
+Thread ID: -1594202432
+
+Current process information:
+Calling process PID: 29 from priority Queue 2
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 138
+Remaining execution time: 0ms
+Time slice: 10ms
+Accumulated time slice: 15000ms
+Thread ID: -1594202432
+
+Current process information after processing:
+Calling process PID: 29 from priority Queue 2
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 139
+Remaining execution time: 0ms
+Time slice: 5ms
+Accumulated time slice: 15000ms
+Thread ID: -1594202432
+
+Current process information:
+Calling process PID: 29 from priority Queue 2
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 139
+Remaining execution time: 0ms
+Time slice: 5ms
+Accumulated time slice: 15000ms
+Thread ID: -1594202432
+
+Current process information after processing:
+Calling process PID: 29 from priority Queue 2
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 139
+Remaining execution time: 0ms
+Time slice: 5ms
+Accumulated time slice: 15000ms
+Thread ID: -1594202432
+
+Current process information:
+Calling process PID: 29 from priority Queue 2
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 139
+Remaining execution time: 0ms
+Time slice: 5ms
+Accumulated time slice: 15000ms
+Thread ID: -1594202432
+
+Current process information after processing:
+Calling process PID: 29 from priority Queue 2
+Process Scheduling type: NORMAL
+Static Priority: 103
+Dynamic Priority: 139
+Remaining execution time: 0ms
+Time slice: 5ms
+Accumulated time slice: 15000ms
+Thread ID: -1594202432
+
+Threads that have finished: 4
+Total processes finished so far: 32
+
