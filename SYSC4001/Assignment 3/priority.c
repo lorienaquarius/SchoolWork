@@ -4,8 +4,8 @@
 #include <unistd.h>
 #include <time.h>
 
-#define NUM_CORES 4
-#define NUM_PROCESSES 5
+#define NUM_CORES 4 //number of cores
+#define NUM_PROCESSES 5 //number of processes per core
 
 #define MAX(X, Y) (X > Y ? X:Y)
 #define MIN(X, Y) (X > Y ? Y:X)
@@ -54,7 +54,7 @@ void *producer(void *arg){
             count++;
 
             //Set scheduling policy
-            switch(j){
+            switch(j % 6){
                 case 0:
                     buffers[i][j].process_policy = FIFO;
                     buffers[i][j].sp = (rand() % 41) + 30; //default SP for FIFO is between 70 and 40
@@ -79,6 +79,25 @@ void *producer(void *arg){
 
 }
 
+void sort_priority(buffer* to_sort, int num_elements){
+
+    //Bubble sort algorithm
+
+    for(int i = 0; i < num_elements - 1; i++){
+        for(int j = 0; j < num_elements - i - 1; j++){
+            if(to_sort[j].dp > to_sort[j+1].dp){
+
+                //swap elements
+                buffer temp = to_sort[j];
+                to_sort[j] = to_sort[j+1];
+                to_sort[j+1] = temp;
+
+            }
+        }
+    }
+}
+
+
 //put in seperate function because it may need to be run again
 int run_RQ1(buffer* RQ1, int process_count, buffer* RQ2, int in_RQ2){
     int processes_done = 0;
@@ -88,55 +107,58 @@ int run_RQ1(buffer* RQ1, int process_count, buffer* RQ2, int in_RQ2){
 
     //find highest priority process
     while(processes_done < process_count){
-
-        int lowest_value = 140;
-        int prio_index = -1;
-        //Get highest priority task
+        
+        //Since priorities change dynamically, need to re-sort every time.
+        //Since the number of processes in this queue isn't huge, this shouldn't take an absurd amount of time
+        //And even if it did, time efficiency is not marked on this assignment
+        sort_priority(RQ1, process_count);
+        //implement round robin structure
         for(int i = 0; i < process_count; i++){
-            if(RQ1[i].dp < lowest_value){
-                lowest_value = RQ1[i].dp;
-                prio_index = i;
+            buffer* current = &RQ1[i];
+
+            //don't re-run finished or moved processes
+            if((current->dp > 129) || (current->remain_time <= 0)){
+                continue;
+            }
+            //print status information
+            printf("Current process information:\nCalling process PID: %d from priority Queue 1\nProcess Scheduling type: %s\nStatic Priority: %d\nDynamic Priority: %d\nRemaining execution time: %dms\nTime slice: %dms\nAccumulated time slice: %dms\nThread ID: %d\n\n",
+                    current->pid, scheduling_types[current->process_policy], current->sp, current->dp, current->remain_time, current->time_slice, current->accu_time_slice, current->thread_id);
+            
+            //Run process
+            usleep(MIN(current->time_slice, current->remain_time)*1000);
+
+            //adjust values
+            current->accu_time_slice += MIN(current->time_slice, current->remain_time);
+            current->remain_time -= current->time_slice;
+            
+
+            //Random dynamic priority
+            int bonus = rand()%11;
+            current->dp = MAX(100, MIN(current->dp - bonus + 5, 139));
+            current->time_slice = current->dp < 120 ? ((140 - current->sp) * 20) : ((140 - current->dp) * 5);
+
+            //See if process is done
+            if(current->remain_time <= 0){
+                current->remain_time = 0;
+                processes_done++;
+                total_processes_finished++;
+            }
+
+            printf("Current process information after processing:\nCalling process PID: %d from priority Queue 1\nProcess Scheduling type: %s\nStatic Priority: %d\nDynamic Priority: %d\nRemaining execution time: %dms\nTime slice: %dms\nAccumulated time slice: %dms\nThread ID: %d\n\n",
+                    current->pid, scheduling_types[current->process_policy], current->sp, current->dp, current->remain_time, current->time_slice, current->accu_time_slice, current->thread_id);
+
+            //If dynamic priority exceeds limit for this priority queue and isn't using the shelved priority, put it into the next one, and increment process counter for that queue
+            if(current->dp > 129){
+                RQ2[in_RQ2 + processes_moved] = *current;
+                processes_done++;
+                processes_moved++;
             }
         }
 
-        buffer* current = &RQ1[prio_index];
-
-        //print status information
-        printf("Current process information:\nCalling process PID: %d from priority Queue 1\nProcess Scheduling type: %s\nStatic Priority: %d\nDynamic Priority: %d\nRemaining execution time: %dms\nTime slice: %dms\nAccumulated time slice: %dms\nThread ID: %d\n\n",
-                current->pid, scheduling_types[current->process_policy], current->sp, current->dp, current->remain_time, current->time_slice, current->accu_time_slice, current->thread_id);
         
-        //Run process
-        usleep(MIN(current->time_slice, current->remain_time)*1000);
-
-        //adjust values
-        current->accu_time_slice += MIN(current->time_slice, current->remain_time);
-        current->remain_time -= current->time_slice;
-        
-
-        //Random dynamic priority
-        int bonus = rand()%11;
-        current->dp = MAX(100, MIN(current->dp - bonus + 5, 139));
-        current->time_slice = current->dp < 120 ? ((140 - current->sp) * 20) : ((140 - current->dp) * 5);
-
-        //See if process is done
-        if(current->remain_time <= 0){
-            current->remain_time = 0;
-            processes_done++;
-            current->dp = 140; //Set DP to highest possible value so other processes in priority Queue will run instead of this
-            total_processes_finished++;
-        }
-
-        printf("Current process information after processing:\nCalling process PID: %d from priority Queue 1\nProcess Scheduling type: %s\nStatic Priority: %d\nDynamic Priority: %d\nRemaining execution time: %dms\nTime slice: %dms\nAccumulated time slice: %dms\nThread ID: %d\n\n",
-                current->pid, scheduling_types[current->process_policy], current->sp, current->dp, current->remain_time, current->time_slice, current->accu_time_slice, current->thread_id);
-
-        //If dynamic priority exceeds limit for this priority queue and isn't using the shelved priority, put it into the next one, and increment process counter for that queue
-        if((current->dp > 129) && (current->dp < 140)){
-            RQ2[in_RQ2 + processes_moved] = *current;
-            processes_done++;
-            processes_moved++;
-        }
 
     }
+    //return how many processes were moved into RQ2
     return processes_moved;
 }
 
@@ -147,78 +169,83 @@ void run_RQ2(buffer* RQ2, int process_count, buffer* RQ1){
 
     //find highest priority process
     while(processes_done < process_count){
-        int lowest_value = 140;
-        int prio_index = -1;
+        //Need to resort after every pass
+        sort_priority(RQ2, process_count);
+
+        //implement round robin behaviour, every process runs once in priority order
         for(int i = 0; i < process_count; i++){
-            if(RQ2[i].dp < lowest_value){
-                lowest_value = RQ1[i].dp;
-                prio_index = i;
+            buffer* current = &RQ2[i];
+
+            //print status information
+            printf("Current process information:\nCalling process PID: %d from priority Queue 2\nProcess Scheduling type: %s\nStatic Priority: %d\nDynamic Priority: %d\nRemaining execution time: %dms\nTime slice: %dms\nAccumulated time slice: %dms\nThread ID: %d\n\n",
+                    current->pid, scheduling_types[current->process_policy], current->sp, current->dp, current->remain_time, current->time_slice, current->accu_time_slice, current->thread_id);
+            
+            //Run process
+            usleep(MIN(current->time_slice, current->remain_time) * 1000);
+
+            //adjust values
+            current->accu_time_slice += MIN(current->time_slice, current->remain_time);
+            current->remain_time -= current->time_slice;
+            
+
+            //Random dynamic priority
+            int bonus = rand()%11;
+            current->dp = MAX(100, MIN(current->dp - bonus + 5, 139));
+            current->time_slice = current->dp < 120 ? ((140 - current->sp) * 20) : ((140 - current->dp) * 5);
+
+            //See if process is done
+            if(current->remain_time <= 0){
+                current->remain_time = 0;
+                processes_done ++;
+                current->dp = 140; //Set DP to highest possible value so other processes in priority Queue will run instead of this
+                total_processes_finished++;
+            }
+
+            printf("Current process information after processing:\nCalling process PID: %d from priority Queue 2\nProcess Scheduling type: %s\nStatic Priority: %d\nDynamic Priority: %d\nRemaining execution time: %dms\nTime slice: %dms\nAccumulated time slice: %dms\nThread ID: %d\n\n",
+                    current->pid, scheduling_types[current->process_policy], current->sp, current->dp, current->remain_time, current->time_slice, current->accu_time_slice, current->thread_id);
+
+            //If dynamic priority is lower than this priority queue allows, move it back to RQ1
+            if(current->dp < 130){
+                RQ1[0] = *current;
+                //increment processes_done by 1 if no processes were moved back to RQ2, meaning the process finished execution in RQ1
+                processes_done += 1 - run_RQ1(RQ1, 1, RQ2, i);
             }
         }
 
-        buffer* current = &RQ2[prio_index];
-
-        //print status information
-        printf("Current process information:\nCalling process PID: %d from priority Queue 2\nProcess Scheduling type: %s\nStatic Priority: %d\nDynamic Priority: %d\nRemaining execution time: %dms\nTime slice: %dms\nAccumulated time slice: %dms\nThread ID: %d\n\n",
-                current->pid, scheduling_types[current->process_policy], current->sp, current->dp, current->remain_time, current->time_slice, current->accu_time_slice, current->thread_id);
-        
-        //Run process
-        usleep(MIN(current->time_slice, current->remain_time) * 1000);
-
-        //adjust values
-        current->accu_time_slice += MIN(current->time_slice, current->remain_time);
-        current->remain_time -= current->time_slice;
-        
-
-        //Random dynamic priority
-        int bonus = rand()%11;
-        current->dp = MAX(100, MIN(current->dp - bonus + 5, 139));
-        current->time_slice = current->dp < 120 ? ((140 - current->sp) * 20) : ((140 - current->dp) * 5);
-
-        //See if process is done
-        if(current->remain_time <= 0){
-            current->remain_time = 0;
-            processes_done ++;
-            current->dp = 140; //Set DP to highest possible value so other processes in priority Queue will run instead of this
-            total_processes_finished++;
-        }
-
-        printf("Current process information after processing:\nCalling process PID: %d from priority Queue 2\nProcess Scheduling type: %s\nStatic Priority: %d\nDynamic Priority: %d\nRemaining execution time: %dms\nTime slice: %dms\nAccumulated time slice: %dms\nThread ID: %d\n\n",
-                current->pid, scheduling_types[current->process_policy], current->sp, current->dp, current->remain_time, current->time_slice, current->accu_time_slice, current->thread_id);
-
-        //If dynamic priority exceeds limit for this priority queue, put it into the next one, and increment process counter for that queue
-        if(current->dp < 130){
-            RQ1[0] = *current;
-            processes_done += 1 - run_RQ1(RQ1, 1, RQ2, prio_index);
-        }
     }
 }
 
 
 void *consumer(void *arg){
+    //processes for this core
     buffer processes[NUM_PROCESSES];
+    //get which set of processes should be accessed
     int* buffers_index_pointer = (int *)arg;
+    //dereference value
     int buffers_index = *buffers_index_pointer;
 
     printf("Buffer array given is array %d\n", buffers_index);
 
+    //move global array into local
     for(int i = 0; i < NUM_PROCESSES; i++){
         processes[i] = buffers[buffers_index][i];
         printf("Copied over process with PID %d, sp of %d, scheduling type %s, and remaining time of %dms\n",
                     processes[i].pid, processes[i].sp, scheduling_types[processes[i].process_policy], processes[i].remain_time);
     }
 
+    //Priority queues
     buffer RQ0[NUM_PROCESSES];
     buffer RQ1[NUM_PROCESSES];
     buffer RQ2[NUM_PROCESSES];
 
+    //counter for each priority queue
     int num_RQ0 = 0;
     int num_RQ1 = 0;
     int num_RQ2 = 0;
 
     
 
-    //sort processes into appropriate priority Qs
+    //sort processes into appropriate priority Queues
     for(int i = 0; i < NUM_PROCESSES; i++){
         
         switch(processes[i].process_policy){
@@ -238,53 +265,74 @@ void *consumer(void *arg){
 
     }
 
+    sort_priority(RQ0, num_RQ0);
 
+    //num_RQ0 gets decremented, need to keep track of total processes
     int total_RQ0_processes = num_RQ0;
     while(num_RQ0 > 0){
-        //Get Lowest priority value/highest priority process
-        int prio_index = -1;
-        int lowest_value = 140;
-        for(int i = 0; i < total_RQ0_processes; i++){
-            if(RQ0[i].dp < lowest_value){
-                lowest_value = RQ0[i].dp;
-                prio_index = i;
-            }
-        }
-        printf("Lowest priority value is at index %d\n", prio_index);
-        buffer* current = &RQ0[prio_index];
         
-        printf("Current process information:\nCalling process PID: %d from priority Queue 0\nProcess Scheduling type: %s\nStatic Priority: %d\nDynamic Priority: %d\nRemaining execution time: %dms\nTime slice: %dms\nAccumulated time slice: %dms\nThread ID: %d\n\n",
-                 current->pid, scheduling_types[current->process_policy], current->sp, current->dp, current->remain_time, current->time_slice, current->accu_time_slice, current->thread_id);
+        //This implements proper round robin algorithm: processes are sorted by priority already, and so each process will run once, even if it's
+        //Lower priority than other processes in the queue
+        for(int i = 0; i < total_RQ0_processes; i++){
+        //which process got selected
 
-        usleep(MIN(current->time_slice, current->remain_time) * 1000);
-        current->accu_time_slice += MIN(current->time_slice, current->remain_time);
-        current->remain_time -= current->time_slice;
+            //Use a pointer so we can work with a single buffer element, but still change the values inside the array
+            buffer* current = &RQ0[i];
+            
+            //Don't repeat done processes
+            if(current->remain_time == 0){
+                continue;
+            }
 
-        if(current->remain_time <= 0){
-            current->remain_time = 0;
-            num_RQ0 --;
-            current->dp = 140; //Set DP to highest possible value so other processes in priority Queue will run instead of this
-            total_processes_finished++;
+            printf("Current process information:\nCalling process PID: %d from priority Queue 0\nProcess Scheduling type: %s\nStatic Priority: %d\nDynamic Priority: %d\nRemaining execution time: %dms\nTime slice: %dms\nAccumulated time slice: %dms\nThread ID: %d\n\n",
+                    current->pid, scheduling_types[current->process_policy], current->sp, current->dp, current->remain_time, current->time_slice, current->accu_time_slice, current->thread_id);
+
+            //run process
+            usleep(MIN(current->time_slice, current->remain_time) * 1000);
+            //adjust values
+            current->accu_time_slice += MIN(current->time_slice, current->remain_time);
+            current->remain_time -= current->time_slice;
+
+            
+            //Process is done
+            if(current->remain_time <= 0){
+                current->remain_time = 0;
+                num_RQ0 --;
+                total_processes_finished++;
+            }
+            //Round robin processes will have their time slice adjusted
+            current->time_slice = (140 - current->sp) * 20;
+            
+            printf("Current process information after processing:\nCalling process PID: %d from priority Queue 0\nProcess Scheduling type: %s\nStatic Priority: %d\nDynamic Priority: %d\nRemaining execution time: %dms\nTime slice: %dms\nAccumulated time slice: %dms\nThread ID: %d\n\n",
+                    current->pid, scheduling_types[current->process_policy], current->sp, current->dp, current->remain_time, current->time_slice, current->accu_time_slice, current->thread_id);
+    
         }
-        current->time_slice = (140 - current->sp) * 20;
 
-        printf("Current process information after processing:\nCalling process PID: %d from priority Queue 0\nProcess Scheduling type: %s\nStatic Priority: %d\nDynamic Priority: %d\nRemaining execution time: %dms\nTime slice: %dms\nAccumulated time slice: %dms\nThread ID: %d\n\n",
-                current->pid, scheduling_types[current->process_policy], current->sp, current->dp, current->remain_time, current->time_slice, current->accu_time_slice, current->thread_id);
-    }
+   }
+
+    //Run RQ1, and increment the number of elements in RQ2 by how many processes were moved from RQ1
     num_RQ2 += run_RQ1(RQ1, num_RQ1, RQ2, num_RQ2);
+
+    //Run RQ2
     run_RQ2(RQ2, num_RQ2, RQ1);
 
+    //increment number of threads finished for main thread
     threads_finished++;
     printf("Threads that have finished: %d\nTotal processes finished so far: %d\n\n", threads_finished, total_processes_finished);
 }
 
 
 int main(){
+    //Randomize seed
     srand(time(NULL));
     int res;
+
+    //cores
     pthread_t threads[NUM_CORES];
+    //setup for detached threads, so they don't need thread_join
     pthread_attr_t attribute;
     
+
     struct sched_param scheduling_value;
     int max_prio;
     int min_prio;
@@ -303,6 +351,8 @@ int main(){
         perror("could not set scheduling policy\n");
     }
 
+    //setting scheduling for thread creation, not terribly important because we don't care which core is running when, just look at scheduling
+    //within each core
     max_prio = sched_get_priority_max(SCHED_OTHER);
     min_prio = sched_get_priority_min(SCHED_OTHER);
     scheduling_value.sched_priority = min_prio;
@@ -314,16 +364,18 @@ int main(){
     }
     pthread_t producer_thread;
 
+    //create producer
     res = pthread_create(&producer_thread, &attribute, producer, NULL);
 
     scheduling_value.sched_priority = max_prio;
     res = pthread_attr_setschedparam(&attribute, &scheduling_value);
 
-
+    //wait for producer to finish
     while(!produced){
         usleep(1000);
     }
 
+    //initialize core
     for(int i = 0; i < NUM_CORES; i++){
         res = pthread_create(&threads[i], &attribute, consumer, (void *)&i);
         if(res != 0){
@@ -331,12 +383,15 @@ int main(){
             exit(EXIT_FAILURE);
             
         } else {
+            //if core creation was successful, assign the thread ID for it's processes
             for(int j = 0; j < NUM_PROCESSES; j++){
                 buffers[i][j].thread_id=threads[i];
             }
         }
+        //wait a second, so the newly created core can access all of it's data before values are changed
         sleep(1);
     }
+    //wait for all cores to finish
     while(threads_finished < NUM_CORES){sleep(1);};
     exit(EXIT_SUCCESS);
 
